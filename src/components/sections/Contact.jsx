@@ -1,32 +1,36 @@
-import React, { useState, useRef } from 'react'
-import styled from 'styled-components'
-import { motion } from 'framer-motion'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEnvelope, faPhone, faLocationDot } from '@fortawesome/free-solid-svg-icons'
-import emailjs from '@emailjs/browser'
+import React, { useState, useRef } from 'react';
+import styled from 'styled-components';
+import { motion } from 'framer-motion';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faEnvelope,
+  faPhone,
+  faLocationDot,
+} from '@fortawesome/free-solid-svg-icons';
+import emailjs from '@emailjs/browser';
 
 const ContactContainer = styled.section`
   padding: 6rem 0;
-`
+`;
 
 const ContactContent = styled.div`
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
-`
+`;
 
 const SectionHeader = styled.div`
   text-align: center;
   margin-bottom: 3rem;
-`
+`;
 
 const SectionTitle = styled.h2`
   font-size: 2.5rem;
   margin-bottom: 1rem;
   position: relative;
   display: inline-block;
-  
+
   &::after {
     content: '';
     position: absolute;
@@ -36,24 +40,24 @@ const SectionTitle = styled.h2`
     height: 4px;
     background-color: var(--primary);
   }
-`
+`;
 
 const SectionDescription = styled.p`
   max-width: 700px;
   margin: 0 auto;
   font-size: 1.1rem;
   color: var(--text-light);
-`
+`;
 
 const ContactLayout = styled.div`
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 3rem;
-  
+
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
   }
-`
+`;
 
 const ContactInfo = styled(motion.div)`
   background-color: var(--primary);
@@ -61,26 +65,26 @@ const ContactInfo = styled(motion.div)`
   padding: 2rem;
   color: white;
   height: fit-content;
-`
+`;
 
 const ContactInfoTitle = styled.h3`
   font-size: 1.5rem;
   margin-bottom: 1.5rem;
-`
+`;
 
 const ContactInfoList = styled.ul`
   list-style-type: none;
-`
+`;
 
 const ContactInfoItem = styled.li`
   display: flex;
   align-items: flex-start;
   margin-bottom: 1.5rem;
-  
+
   &:last-child {
     margin-bottom: 0;
   }
-`
+`;
 
 const ContactIconContainer = styled.div`
   width: 40px;
@@ -92,47 +96,47 @@ const ContactIconContainer = styled.div`
   justify-content: center;
   margin-right: 1rem;
   flex-shrink: 0;
-`
+`;
 
 const ContactInfoContent = styled.div`
   h4 {
     margin-bottom: 0.3rem;
     font-weight: 600;
   }
-  
+
   p {
     opacity: 0.9;
     font-size: 0.9rem;
   }
-`
+`;
 
 const ContactForm = styled(motion.form)`
   background-color: white;
   border-radius: 10px;
   padding: 2rem;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-`
+`;
 
 const FormGroup = styled.div`
   margin-bottom: 1.5rem;
-  
+
   label {
     display: block;
     margin-bottom: 0.5rem;
     font-weight: 500;
     color: var(--text);
   }
-`
+`;
 
 const FormRow = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
-  
+
   @media (max-width: 576px) {
     grid-template-columns: 1fr;
   }
-`
+`;
 
 const Input = styled.input`
   width: 100%;
@@ -142,13 +146,13 @@ const Input = styled.input`
   font-size: 1rem;
   font-family: inherit;
   transition: var(--transition);
-  
+
   &:focus {
     outline: none;
     border-color: var(--primary);
     box-shadow: 0 0 0 3px rgba(10, 102, 194, 0.1);
   }
-`
+`;
 
 const TextArea = styled.textarea`
   width: 100%;
@@ -160,13 +164,13 @@ const TextArea = styled.textarea`
   resize: vertical;
   min-height: 150px;
   transition: var(--transition);
-  
+
   &:focus {
     outline: none;
     border-color: var(--primary);
     box-shadow: 0 0 0 3px rgba(10, 102, 194, 0.1);
   }
-`
+`;
 
 const SubmitButton = styled.button`
   background-color: var(--primary);
@@ -178,110 +182,114 @@ const SubmitButton = styled.button`
   border: none;
   cursor: pointer;
   transition: var(--transition);
-  
+
   &:hover {
     background-color: var(--secondary);
     transform: translateY(-2px);
   }
-  
+
   &:disabled {
     opacity: 0.7;
     cursor: not-allowed;
     transform: none;
   }
-`
+`;
 
 const FormMessage = styled.div`
   padding: 1rem;
   margin-top: 1rem;
   border-radius: 5px;
   text-align: center;
-  
+
   &.success {
     background-color: rgba(57, 181, 74, 0.1);
     color: var(--success);
     border: 1px solid var(--success);
   }
-  
+
   &.error {
     background-color: rgba(220, 53, 69, 0.1);
     color: #dc3545;
     border: 1px solid #dc3545;
   }
-`
+`;
 
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     subject: '',
-    message: ''
-  })
-  
+    message: '',
+  });
+
   const [status, setStatus] = useState({
     submitted: false,
     success: false,
-    message: ''
-  })
-  
-  const [loading, setLoading] = useState(false)
-  const form = useRef()
-  
+    message: '',
+  });
+
+  const [loading, setLoading] = useState(false);
+  const form = useRef();
+
   const handleChange = (e) => {
-    const { name, value } = e.target
+    const { name, value } = e.target;
     setFormData({
       ...formData,
-      [name]: value
-    })
-  }
-  
+      [name]: value,
+    });
+  };
+
   const handleSubmit = async (e) => {
-    e.preventDefault()
-    setLoading(true)
-    
+    e.preventDefault();
+    setLoading(true);
+
     try {
       // Add your EmailJS service ID, template ID, and public key
       // This is a placeholder, replace with your actual EmailJS details
       await emailjs.sendForm(
-        'YOUR_SERVICE_ID', 
+        'YOUR_SERVICE_ID',
         'YOUR_TEMPLATE_ID',
         form.current,
         'YOUR_PUBLIC_KEY'
-      )
-      
+      );
+
       setStatus({
         submitted: true,
         success: true,
-        message: 'Thank you! Your message has been sent successfully.'
-      })
-      
+        message: 'Thank you! Your message has been sent successfully.',
+      });
+
       setFormData({
         name: '',
         email: '',
         subject: '',
-        message: ''
-      })
+        message: '',
+      });
     } catch (error) {
       setStatus({
         submitted: true,
         success: false,
-        message: 'Oops! Something went wrong. Please try again later.'
-      })
+        message: 'Oops! Something went wrong. Please try again later.',
+      });
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
-  }
-  
+  };
+
   return (
     <ContactContainer id="contact">
       <ContactContent>
         <SectionHeader>
-          <SectionTitle>Contact Me</SectionTitle>
+          <SectionTitle>Let's Collaborate</SectionTitle>
           <SectionDescription>
-            Have a project in mind or want to discuss how I can help your business? Get in touch with me.
+            Ready to transform your technology challenges into business
+            opportunities? I'm available for consulting, architecture review,
+            and project leadership roles. Let's discuss how my expertise in
+            AIoT, cloud architecture, and digital transformation can drive value
+            for your organization.
           </SectionDescription>
         </SectionHeader>
-        
+
         <ContactLayout>
           <ContactInfo
             initial={{ opacity: 0, x: -50 }}
@@ -289,7 +297,9 @@ const Contact = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <ContactInfoTitle>Let's talk about everything</ContactInfoTitle>
+            <ContactInfoTitle>
+              Schedule a strategic consultation
+            </ContactInfoTitle>
             <ContactInfoList>
               <ContactInfoItem>
                 <ContactIconContainer>
@@ -300,7 +310,7 @@ const Contact = () => {
                   <p>contact@nagarjunr.com</p>
                 </ContactInfoContent>
               </ContactInfoItem>
-              
+
               <ContactInfoItem>
                 <ContactIconContainer>
                   <FontAwesomeIcon icon={faPhone} />
@@ -310,7 +320,7 @@ const Contact = () => {
                   <p>+1 (234) 567-890</p>
                 </ContactInfoContent>
               </ContactInfoItem>
-              
+
               <ContactInfoItem>
                 <ContactIconContainer>
                   <FontAwesomeIcon icon={faLocationDot} />
@@ -322,7 +332,7 @@ const Contact = () => {
               </ContactInfoItem>
             </ContactInfoList>
           </ContactInfo>
-          
+
           <ContactForm
             ref={form}
             onSubmit={handleSubmit}
@@ -343,7 +353,7 @@ const Contact = () => {
                   required
                 />
               </FormGroup>
-              
+
               <FormGroup>
                 <label htmlFor="email">Your Email</label>
                 <Input
@@ -356,7 +366,7 @@ const Contact = () => {
                 />
               </FormGroup>
             </FormRow>
-            
+
             <FormGroup>
               <label htmlFor="subject">Subject</label>
               <Input
@@ -368,7 +378,7 @@ const Contact = () => {
                 required
               />
             </FormGroup>
-            
+
             <FormGroup>
               <label htmlFor="message">Your Message</label>
               <TextArea
@@ -379,11 +389,11 @@ const Contact = () => {
                 required
               />
             </FormGroup>
-            
+
             <SubmitButton type="submit" disabled={loading}>
               {loading ? 'Sending...' : 'Send Message'}
             </SubmitButton>
-            
+
             {status.submitted && (
               <FormMessage className={status.success ? 'success' : 'error'}>
                 {status.message}
@@ -393,7 +403,7 @@ const Contact = () => {
         </ContactLayout>
       </ContactContent>
     </ContactContainer>
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;
