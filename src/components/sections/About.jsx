@@ -7,6 +7,8 @@ import {
   faMicrochip,
   faServer,
   faCogs,
+  faUserGraduate,
+  faGlobeAmericas,
 } from '@fortawesome/free-solid-svg-icons';
 
 const AboutContainer = styled.section`
@@ -207,7 +209,7 @@ const About = () => {
         >
           <AboutImage>
             <div className="about-placeholder">
-              Cloud & AIoT Professional with 15+ years of experience
+              Technology Expert with Global Experience & Mentorship Passion
             </div>
           </AboutImage>
           <ExperienceBadge>
@@ -224,19 +226,43 @@ const About = () => {
         >
           <SectionTitle>About Me</SectionTitle>
           <AboutDescription>
-            I'm a seasoned AIoT professional with 15+ years of expertise
-            bridging the worlds of hardware and software. My career spans from
-            developing real-time embedded systems to architecting
-            enterprise-scale cloud solutions that power the digital economy. I
-            specialize in creating seamless AIoT ecosystems that connect
-            physical devices to intelligent cloud platforms, enabling
-            data-driven decision making and automation that transforms how
-            businesses operate. My technical leadership has delivered measurable
-            business outcomes across automotive, manufacturing, and logistics
-            industries.
+            My 15+ year journey in technology has given me extensive expertise in AIoT solutions and cloud architectures. 
+            Along this path, I've developed a passion for helping others succeed in their careers. While my primary 
+            strength is in technical innovation, I'm also open to offering career mentorship and guidance for 
+            international education opportunities based on my own experiences living and working across borders. 
+            I aim to combine solving complex technical challenges with helping others navigate their professional 
+            journeys in the global technology landscape.
           </AboutDescription>
 
           <SkillsContainer>
+            <SkillCard>
+              <SkillIcon>
+                <FontAwesomeIcon icon={faUserGraduate} />
+              </SkillIcon>
+              <SkillInfo>
+                <h3>Career Mentorship</h3>
+                <p>
+                  Open to providing personalized guidance to professionals seeking advice on 
+                  career transitions, skill development, and interview preparation based on my 
+                  own journey in the tech industry and lessons learned along the way
+                </p>
+              </SkillInfo>
+            </SkillCard>
+
+            <SkillCard>
+              <SkillIcon>
+                <FontAwesomeIcon icon={faGlobeAmericas} />
+              </SkillIcon>
+              <SkillInfo>
+                <h3>International Education</h3>
+                <p>
+                  Willing to share insights with students and professionals interested in international 
+                  opportunities, drawing from my personal experiences with university selection, 
+                  admissions processes, and cultural adaptation in global settings
+                </p>
+              </SkillInfo>
+            </SkillCard>
+
             <SkillCard>
               <SkillIcon>
                 <FontAwesomeIcon icon={faCloud} />
@@ -244,37 +270,9 @@ const About = () => {
               <SkillInfo>
                 <h3>Cloud Architecture</h3>
                 <p>
-                  AWS & Azure certified architect specializing in serverless
-                  architectures, microservices, and resilient cloud-native
-                  solutions that scale seamlessly with business needs
-                </p>
-              </SkillInfo>
-            </SkillCard>
-
-            <SkillCard>
-              <SkillIcon>
-                <FontAwesomeIcon icon={faMicrochip} />
-              </SkillIcon>
-              <SkillInfo>
-                <h3>Embedded Systems</h3>
-                <p>
-                  Expert in resource-constrained real-time systems, firmware
-                  optimization, and hardware-software integration for critical
-                  applications in automotive and industrial domains
-                </p>
-              </SkillInfo>
-            </SkillCard>
-
-            <SkillCard>
-              <SkillIcon>
-                <FontAwesomeIcon icon={faServer} />
-              </SkillIcon>
-              <SkillInfo>
-                <h3>IoT Solutions</h3>
-                <p>
-                  Architect of end-to-end IoT ecosystems from secure edge device
-                  connectivity to robust cloud backends, with expertise in IoT
-                  protocols, device management, and data pipelines
+                  AWS & Azure certified architect with extensive experience creating resilient 
+                  cloud-native solutions that scale with business needs, leveraging best practices 
+                  in serverless computing, microservices, and distributed systems
                 </p>
               </SkillInfo>
             </SkillCard>
@@ -284,12 +282,11 @@ const About = () => {
                 <FontAwesomeIcon icon={faCogs} />
               </SkillIcon>
               <SkillInfo>
-                <h3>AI Integration</h3>
+                <h3>AIoT Solutions</h3>
                 <p>
-                  Specialist in embedding machine learning models into IoT
-                  workflows, creating intelligent systems that deliver
-                  predictive maintenance, anomaly detection, and automated
-                  decision-making
+                  Architect of intelligent systems that connect physical devices to cloud platforms, 
+                  creating innovative solutions that transform raw data into actionable insights through 
+                  seamless integration of IoT devices and AI/ML technologies
                 </p>
               </SkillInfo>
             </SkillCard>

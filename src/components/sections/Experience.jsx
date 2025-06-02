@@ -200,6 +200,26 @@ const Experience = () => {
 
   const jobs = [
     {
+      company: 'Career Interests',
+      title: 'Career Guidance & International Education',
+      period: '2023 - Present',
+      description: [
+        'Offered informal career conversations to peers and junior colleagues seeking guidance on technology career paths.',
+        'Shared personal experiences and insights with students interested in international education opportunities.',
+        'Provided feedback on resumes and interview preparation for colleagues looking to advance in their technical careers.',
+        'Participated in mentorship meetups to discuss challenges and opportunities in global technology careers.',
+        'Remained open to connecting professionals with relevant resources based on their career and educational goals.',
+      ],
+      skills: [
+        'Peer Career Guidance',
+        'International Education Insights',
+        'Resume & Interview Feedback',
+        'Technology Career Pathways',
+        'Personal Experience Sharing',
+        'Professional Networking',
+      ],
+    },
+    {
       company: 'Bosch Digital',
       title: 'Cloud & AIoT Solutions Manager',
       period: '2023 - Present',
@@ -207,16 +227,16 @@ const Experience = () => {
         'Spearheaded the design and implementation of an end-to-end AIoT platform that reduced operational costs by 35% for manufacturing clients.',
         'Led the architectural design of a secure, scalable automotive logistics platform processing 10M+ daily events with 99.99% uptime.',
         'Engineered a DevSecOps platform on AWS that accelerated deployment cycles by 60% while enhancing security compliance.',
-        'Architected the integration between Bosch IoT Suite and Electric Scooter Platform, enabling real-time fleet management and predictive maintenance.',
-        'Mentored 5 junior architects, creating a knowledge-sharing program that improved team skills and project delivery quality.',
+        'Developed integration architecture between Bosch IoT Suite and vehicle platforms, enabling real-time fleet management.',
+        'Collaborated with global teams to implement consistent development standards and best practices across projects.',
       ],
       skills: [
         'Cloud Systems Architecture (AWS, Azure)',
         'AIoT System Architecture & Design',
         'Enterprise Integration Patterns',
-        'Technical Mentorship',
-        'Cloud Strategy',
-        'Emergent Technologies (Quantum Computing. AI, Edge Computing)',
+        'Cloud Strategy & Implementation',
+        'Digital Transformation',
+        'Technical Leadership',
       ],
     },
     {
@@ -238,25 +258,6 @@ const Experience = () => {
         'Enterprise-Scale Data Processing',
       ],
     },
-    {
-      company: 'Previous Roles',
-      title: 'Embedded Systems Specialist',
-      period: '2011 - 2019',
-      description: [
-        'Optimized video decoding algorithms achieving 40% improvement in processing efficiency for resource-constrained devices.',
-        'Developed precision firmware for industrial 3D printers that improved manufacturing accuracy by 0.02mm, meeting critical medical device requirements.',
-        'Created a novel low-latency communication protocol that extended battery life of IoT sensors by up to 60%.',
-        'Designed and implemented an event-driven architecture for ultra-low-power asynchronous systems used in environmental monitoring.',
-        'Contributed to an open-source embedded framework used in more than 200 commercial products worldwide.',
-      ],
-      skills: [
-        'Real-Time Operating Systems',
-        'Embedded C/C++',
-        'Firmware Optimization',
-        'Hardware-Software Integration',
-        'Communication Protocols',
-      ],
-    },
   ];
 
   return (
@@ -265,10 +266,7 @@ const Experience = () => {
         <SectionHeader>
           <SectionTitle>My Experience</SectionTitle>
           <SectionDescription>
-            With over 15 years of industry expertise, I've successfully
-            delivered transformative technology solutions across the entire
-            stack—from low-level embedded systems to enterprise cloud
-            architectures—creating measurable business value at every level.
+            My 15+ year journey in technology has focused on delivering innovative solutions at the intersection of IoT, cloud, and AI. Throughout this time, I've developed an interest in helping others navigate their own career paths and educational opportunities based on my professional experiences.
           </SectionDescription>
         </SectionHeader>
 

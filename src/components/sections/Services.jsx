@@ -9,6 +9,8 @@ import {
   faCogs,
   faServer,
   faLightbulb,
+  faUserGraduate,
+  faPlaneDeparture,
 } from '@fortawesome/free-solid-svg-icons';
 
 const ServicesContainer = styled.section`
@@ -135,6 +137,18 @@ const Services = () => {
         'End-to-end IoT implementation from secure edge device integration to advanced cloud analytics. Create connected ecosystems that transform raw data into actionable business intelligence with real-time monitoring, predictive maintenance, and automated workflows.',
     },
     {
+      icon: faUserGraduate,
+      title: '1:1 Career Guidance',
+      description:
+        'Personalized career conversations for tech professionals seeking direction. Drawing from my industry experience to offer insights on career transitions, skill development opportunities, and interview preparation strategies based on my own professional journey in the technology sector.',
+    },
+    {
+      icon: faPlaneDeparture,
+      title: 'Study & Work Abroad Guidance',
+      description:
+        'Informal guidance for professionals and students interested in international opportunities. Sharing my personal experiences with application processes, university selection considerations, and cultural adaptation challenges to help others navigate their own global education and career paths.',
+    },
+    {
       icon: faLaptopCode,
       title: 'Custom Software Engineering',
       description:
@@ -152,12 +166,6 @@ const Services = () => {
       description:
         'Strategic technology advisory services to help businesses navigate complex technological landscapes. Identify emerging opportunities, develop proof-of-concepts, and create practical implementation strategies that drive innovation while managing technical debt.',
     },
-    {
-      icon: faMicrochip,
-      title: 'Advanced Embedded Systems',
-      description:
-        'Cutting-edge embedded systems engineering for resource-constrained environments. Expertise in real-time operating systems, hardware-software integration, power optimization, and certification-ready development for regulated industries like automotive and medical devices.',
-    },
   ];
 
   return (
@@ -167,9 +175,10 @@ const Services = () => {
           <SectionTitle>My Services</SectionTitle>
           <SectionDescription>
             I deliver high-value technology solutions at the convergence of IoT,
-            cloud, and AI—helping forward-thinking organizations harness the
-            power of connected intelligence to gain competitive advantage,
-            optimize operations, and create new business models.
+            cloud, and AI, which is my primary area of expertise. I'm also open to 
+            offering personalized career guidance and international education insights
+            based on my own experiences for those looking to grow professionally
+            or explore global opportunities.
           </SectionDescription>
         </SectionHeader>
 

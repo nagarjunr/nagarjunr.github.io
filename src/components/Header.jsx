@@ -18,8 +18,7 @@ const HeaderContainer = styled.header`
 
   // Ensure contrast against hero background
   @media (max-width: 768px) {
-    background-color: ${(props) =>
-      props.scrolled ? 'white' : 'rgba(0, 0, 0, 0.2)'};
+    background-color: ${(props) => (props.scrolled ? 'white' : 'transparent')};
   }
 `;
 
@@ -36,10 +35,9 @@ const HeaderContent = styled.div`
 const Logo = styled(Link)`
   font-size: 1.5rem;
   font-weight: 700;
-  color: ${(props) => (props.scrolled ? 'var(--primary)' : 'white')};
+  color: ${(props) => 'var(--primary)'};
   transition: var(--transition);
-  text-shadow: ${(props) =>
-    props.scrolled ? 'none' : '0px 1px 2px rgba(0,0,0,0.3)'};
+  text-shadow: none;
 
   span {
     color: var(--primary);
@@ -67,11 +65,10 @@ const Nav = styled.nav`
 
 const NavLink = styled(Link)`
   margin: 0 1rem;
-  color: ${(props) => (props.scrolled ? 'var(--text)' : 'white')};
+  color: var(--text);
   font-weight: 500;
   transition: var(--transition);
-  text-shadow: ${(props) =>
-    props.scrolled ? 'none' : '0px 1px 2px rgba(0,0,0,0.3)'};
+  text-shadow: none;
 
   &:hover {
     color: var(--primary);
@@ -89,10 +86,11 @@ const MobileMenuButton = styled.button`
   display: none;
   background: none;
   border: none;
-  color: ${(props) => (props.scrolled ? 'var(--text)' : 'white')};
+  color: var(--text);
   font-size: 1.5rem;
   cursor: pointer;
   z-index: 1001;
+  padding: 5px;
 
   @media (max-width: 768px) {
     display: block;
@@ -100,14 +98,17 @@ const MobileMenuButton = styled.button`
 `;
 
 const Header = () => {
-  const [scrolled, setScrolled] = useState(false);
+  // Start with scrolled=true to ensure text is dark on initial page load
+  const [scrolled, setScrolled] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    // Initial check for page load
-    setScrolled(window.scrollY > 50);
+    // Always keep scrolled as true to maintain dark text color
+    setScrolled(true);
 
     const handleScroll = () => {
+      // Only change background color opacity based on scroll
+      // Text color will remain dark regardless of scroll position
       setScrolled(window.scrollY > 50);
     };
 
@@ -126,7 +127,7 @@ const Header = () => {
     <HeaderContainer scrolled={scrolled}>
       <HeaderContent>
         <Logo to="/" scrolled={scrolled}>
-          Nagarjun<span>R</span>
+          Nagarjun<span> Rajendran</span>
         </Logo>
 
         <MobileMenuButton onClick={toggleMenu} scrolled={scrolled}>
@@ -150,13 +151,6 @@ const Header = () => {
             onClick={() => setIsOpen(false)}
           >
             Experience
-          </NavLink>
-          <NavLink
-            to="/#projects"
-            scrolled={scrolled}
-            onClick={() => setIsOpen(false)}
-          >
-            Projects
           </NavLink>
           <NavLink
             to="/#services"

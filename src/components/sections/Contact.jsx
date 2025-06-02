@@ -280,13 +280,12 @@ const Contact = () => {
     <ContactContainer id="contact">
       <ContactContent>
         <SectionHeader>
-          <SectionTitle>Let's Collaborate</SectionTitle>
+          <SectionTitle>Let's Connect</SectionTitle>
           <SectionDescription>
-            Ready to transform your technology challenges into business
-            opportunities? I'm available for consulting, architecture review,
-            and project leadership roles. Let's discuss how my expertise in
-            AIoT, cloud architecture, and digital transformation can drive value
-            for your organization.
+            Whether you're seeking technology expertise in AIoT and cloud solutions, or would like to 
+            discuss career paths and international education opportunities, I'm open to connecting. 
+            While my primary expertise is in technology, I'm also happy to share insights from my own 
+            professional journey for those looking for guidance.
           </SectionDescription>
         </SectionHeader>
 
@@ -298,7 +297,7 @@ const Contact = () => {
             transition={{ duration: 0.6 }}
           >
             <ContactInfoTitle>
-              Schedule a strategic consultation
+              Let's discuss your technology needs
             </ContactInfoTitle>
             <ContactInfoList>
               <ContactInfoItem>

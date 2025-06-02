@@ -14,6 +14,22 @@ const HeroContainer = styled.section`
   position: relative;
   overflow: hidden;
   padding: 0;
+
+  // Add a top gradient overlay for better header visibility
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.4) 0%,
+      rgba(0, 0, 0, 0) 100%
+    );
+    z-index: 1;
+  }
 `;
 
 const HeroContent = styled.div`
@@ -25,6 +41,8 @@ const HeroContent = styled.div`
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
   align-items: center;
+  position: relative;
+  z-index: 2; // Ensure content appears above the gradient overlay
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
@@ -240,10 +258,10 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Transforming businesses through AIoT innovation with 15+ years of
-            expertise in cloud architecture, embedded systems, and digital
-            transformation. Specializing in building intelligent, connected
-            solutions that drive business value.
+            AIoT professional with 15+ years of expertise in technology leadership and digital 
+            transformation. Also open to offering career mentorship and guidance for international
+            education opportunities, combining my technical knowledge with a passion for
+            helping others succeed in their professional journeys.
           </Description>
           <HeroButtons
             initial={{ opacity: 0, y: 20 }}

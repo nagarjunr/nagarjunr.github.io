@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 import Hero from './sections/Hero';
 import About from './sections/About';
 import Experience from './sections/Experience';
-import Projects from './sections/Projects';
 import Services from './sections/Services';
 import Contact from './sections/Contact';
 
@@ -18,7 +17,6 @@ const HomePage = () => {
       <Hero />
       <About />
       <Experience />
-      <Projects />
       <Services />
       <Contact />
     </Main>
