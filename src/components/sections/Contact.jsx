@@ -282,10 +282,11 @@ const Contact = () => {
         <SectionHeader>
           <SectionTitle>Let's Connect</SectionTitle>
           <SectionDescription>
-            Whether you're seeking technology expertise in AIoT and cloud solutions, or would like to 
-            discuss career paths and international education opportunities, I'm open to connecting. 
-            While my primary expertise is in technology, I'm also happy to share insights from my own 
-            professional journey for those looking for guidance.
+            Whether you're seeking technology expertise in AIoT and cloud
+            solutions, or would like to discuss career paths and international
+            education opportunities, I'm open to connecting. While my primary
+            expertise is in technology, I'm also happy to share insights from my
+            own professional journey for those looking for guidance.
           </SectionDescription>
         </SectionHeader>
 

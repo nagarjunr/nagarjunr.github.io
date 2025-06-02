@@ -258,10 +258,11 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            AIoT professional with 15+ years of expertise in technology leadership and digital 
-            transformation. Also open to offering career mentorship and guidance for international
-            education opportunities, combining my technical knowledge with a passion for
-            helping others succeed in their professional journeys.
+            AIoT professional with 15+ years of expertise in technology
+            leadership and digital transformation. Also open to offering career
+            mentorship and guidance for international education opportunities,
+            combining my technical knowledge with a passion for helping others
+            succeed in their professional journeys.
           </Description>
           <HeroButtons
             initial={{ opacity: 0, y: 20 }}

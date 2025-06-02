@@ -226,12 +226,15 @@ const About = () => {
         >
           <SectionTitle>About Me</SectionTitle>
           <AboutDescription>
-            My 15+ year journey in technology has given me extensive expertise in AIoT solutions and cloud architectures. 
-            Along this path, I've developed a passion for helping others succeed in their careers. While my primary 
-            strength is in technical innovation, I'm also open to offering career mentorship and guidance for 
-            international education opportunities based on my own experiences living and working across borders. 
-            I aim to combine solving complex technical challenges with helping others navigate their professional 
-            journeys in the global technology landscape.
+            My 15+ year journey in technology has given me extensive expertise
+            in AIoT solutions and cloud architectures. Along this path, I've
+            developed a passion for helping others succeed in their careers.
+            While my primary strength is in technical innovation, I'm also open
+            to offering career mentorship and guidance for international
+            education opportunities based on my own experiences living and
+            working across borders. I aim to combine solving complex technical
+            challenges with helping others navigate their professional journeys
+            in the global technology landscape.
           </AboutDescription>
 
           <SkillsContainer>
@@ -242,9 +245,10 @@ const About = () => {
               <SkillInfo>
                 <h3>Career Mentorship</h3>
                 <p>
-                  Open to providing personalized guidance to professionals seeking advice on 
-                  career transitions, skill development, and interview preparation based on my 
-                  own journey in the tech industry and lessons learned along the way
+                  Open to providing personalized guidance to professionals
+                  seeking advice on career transitions, skill development, and
+                  interview preparation based on my own journey in the tech
+                  industry and lessons learned along the way
                 </p>
               </SkillInfo>
             </SkillCard>
@@ -256,9 +260,10 @@ const About = () => {
               <SkillInfo>
                 <h3>International Education</h3>
                 <p>
-                  Willing to share insights with students and professionals interested in international 
-                  opportunities, drawing from my personal experiences with university selection, 
-                  admissions processes, and cultural adaptation in global settings
+                  Willing to share insights with students and professionals
+                  interested in international opportunities, drawing from my
+                  personal experiences with university selection, admissions
+                  processes, and cultural adaptation in global settings
                 </p>
               </SkillInfo>
             </SkillCard>
@@ -270,9 +275,10 @@ const About = () => {
               <SkillInfo>
                 <h3>Cloud Architecture</h3>
                 <p>
-                  AWS & Azure certified architect with extensive experience creating resilient 
-                  cloud-native solutions that scale with business needs, leveraging best practices 
-                  in serverless computing, microservices, and distributed systems
+                  AWS & Azure certified architect with extensive experience
+                  creating resilient cloud-native solutions that scale with
+                  business needs, leveraging best practices in serverless
+                  computing, microservices, and distributed systems
                 </p>
               </SkillInfo>
             </SkillCard>
@@ -284,9 +290,10 @@ const About = () => {
               <SkillInfo>
                 <h3>AIoT Solutions</h3>
                 <p>
-                  Architect of intelligent systems that connect physical devices to cloud platforms, 
-                  creating innovative solutions that transform raw data into actionable insights through 
-                  seamless integration of IoT devices and AI/ML technologies
+                  Architect of intelligent systems that connect physical devices
+                  to cloud platforms, creating innovative solutions that
+                  transform raw data into actionable insights through seamless
+                  integration of IoT devices and AI/ML technologies
                 </p>
               </SkillInfo>
             </SkillCard>

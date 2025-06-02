@@ -266,7 +266,11 @@ const Experience = () => {
         <SectionHeader>
           <SectionTitle>My Experience</SectionTitle>
           <SectionDescription>
-            My 15+ year journey in technology has focused on delivering innovative solutions at the intersection of IoT, cloud, and AI. Throughout this time, I've developed an interest in helping others navigate their own career paths and educational opportunities based on my professional experiences.
+            My 15+ year journey in technology has focused on delivering
+            innovative solutions at the intersection of IoT, cloud, and AI.
+            Throughout this time, I've developed an interest in helping others
+            navigate their own career paths and educational opportunities based
+            on my professional experiences.
           </SectionDescription>
         </SectionHeader>
 

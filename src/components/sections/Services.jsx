@@ -175,10 +175,10 @@ const Services = () => {
           <SectionTitle>My Services</SectionTitle>
           <SectionDescription>
             I deliver high-value technology solutions at the convergence of IoT,
-            cloud, and AI, which is my primary area of expertise. I'm also open to 
-            offering personalized career guidance and international education insights
-            based on my own experiences for those looking to grow professionally
-            or explore global opportunities.
+            cloud, and AI, which is my primary area of expertise. I'm also open
+            to offering personalized career guidance and international education
+            insights based on my own experiences for those looking to grow
+            professionally or explore global opportunities.
           </SectionDescription>
         </SectionHeader>
 
