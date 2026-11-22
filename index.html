@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#F8FAFC">
+  <meta name="twin-api" content="">
   <meta name="description" content="Nagarjun Rajendran. IoT Cloud Solutions Architecture, practical GenAI, technical leadership, and fieldnotes from hands-on learning.">
   <title>Nagarjun | IoT Cloud Architecture, GenAI &amp; Technical Leadership</title>
   <link rel="icon" href="assets/silicon-to-systems-icon.png">
@@ -576,6 +577,30 @@
     @media (max-width: 1100px) { .nav-note { display: none; } .nav-right { gap: 14px; } }
     @media (max-width: 760px) { .newsletter { padding-top: 46px; padding-bottom: 48px; } .newsletter-layout { grid-template-columns: 1fr; gap: 36px; } .identity img { width: 112px; height: 112px; } }
     @media print { .newsletter { padding: 28px 0; background: transparent; } .newsletter h2 { font-size: 27px; } .newsletter-layout { gap: 25px; } .newsletter .button { display: none; } }
+
+    .ask { padding-top: 72px; padding-bottom: 76px; border-top: 1px solid var(--line); }
+    .ask[hidden], [data-ask][hidden] { display: none; }
+    .ask-layout { display: grid; grid-template-columns: 1fr 1.2fr; gap: 76px; margin-top: 28px; }
+    .ask h2 { font-size: clamp(42px, 5vw, 66px); line-height: 1.12; font-weight: 400; letter-spacing: -2px; margin: 0 0 24px; }
+    .ask h2 em { color: var(--teal-700); }
+    .ask-intro { font-size: 18px; line-height: 1.75; margin: 0 0 15px; max-width: 460px; }
+    .ask-note { font-size: 13px; line-height: 1.8; color: var(--muted); margin: 0; max-width: 460px; }
+    .ask-panel { border: 1px solid var(--line); background: #fff; display: flex; flex-direction: column; min-height: 420px; }
+    .ask-log { flex: 1; max-height: 460px; overflow-y: auto; padding: 22px; display: flex; flex-direction: column; gap: 14px; }
+    .ask-msg { max-width: 88%; padding: 12px 15px; font-size: 14px; line-height: 1.75; white-space: pre-wrap; overflow-wrap: anywhere; }
+    .ask-msg.bot { background: var(--wash); align-self: flex-start; }
+    .ask-msg.user { background: var(--ink); color: var(--slate-50); align-self: flex-end; }
+    .ask-msg.error { background: #fff; border: 1px solid var(--line); color: var(--muted); align-self: flex-start; }
+    .ask-suggest[hidden] { display: none; }
+    .ask-suggest { display: flex; flex-wrap: wrap; gap: 8px; padding: 0 22px 16px; }
+    .ask-suggest button { border: 1px solid var(--line); background: #fff; color: var(--ink); font: inherit; font-size: 12px; padding: 9px 12px; cursor: pointer; }
+    .ask-suggest button:hover { border-color: var(--teal-700); color: var(--teal-700); }
+    .ask-form { display: flex; border-top: 1px solid var(--line); }
+    .ask-form input { flex: 1; min-width: 0; border: 0; padding: 17px 18px; font: inherit; font-size: 14px; background: transparent; color: var(--ink); }
+    .ask-form button { border: 0; border-left: 1px solid var(--line); background: var(--ink); color: var(--slate-50); font: inherit; font-size: 12px; padding: 0 22px; cursor: pointer; }
+    .ask-form button:disabled { opacity: .55; cursor: wait; }
+    @media (max-width: 760px) { .ask { padding-top: 46px; padding-bottom: 48px; } .ask-layout { grid-template-columns: 1fr; gap: 32px; } .ask-msg { max-width: 94%; } .ask-form input { font-size: 16px; } }
+    @media print { .ask { display: none; } }
   </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Person", "@id": "https://nagarjunr.github.io/#person", "name": "Nagarjun Rajendran", "alternateName": "Nagarjun", "url": "https://nagarjunr.github.io/", "image": "https://nagarjunr.github.io/assets/nagarjun-rajendran.png", "email": "nagarjunrajen@gmail.com", "jobTitle": "Cloud and Technology Solutions Manager, Expert", "worksFor": {"@type": "Organization", "name": "Robert Bosch LLC"}, "description": "Cloud and technology solutions professional with 15 years of experience across software applications, embedded systems, IoT, and cloud architecture. Focused on practical GenAI, technical leadership, and clear decisions for delivery teams.", "knowsAbout": ["IoT solution architecture", "Cloud solution architecture", "Amazon Web Services (AWS)", "Microsoft Azure", "Generative AI (GenAI)", "System design", "Integration architecture", "Technical product ownership", "Technical leadership", "Embedded systems", "Python", "C and C++", "Infrastructure as code", "Customer discovery"], "sameAs": ["https://www.linkedin.com/in/nagarjunr/", "https://github.com/nagarjunr", "https://medium.com/@nagarjunr", "https://nagarjun.beehiiv.com"], "alumniOf": [{"@type": "CollegeOrUniversity", "name": "National University of Singapore"}, {"@type": "CollegeOrUniversity", "name": "Anna University, India"}], "memberOf": {"@type": "Organization", "name": "IEEE"}}, {"@type": "ProfilePage", "@id": "https://nagarjunr.github.io/#profile", "url": "https://nagarjunr.github.io/", "name": "Nagarjun Rajendran | IoT Cloud Architecture, GenAI and Technical Leadership", "dateModified": "2026-11-22", "mainEntity": {"@id": "https://nagarjunr.github.io/#person"}, "inLanguage": "en", "hasPart": [{"@type": "DigitalDocument", "name": "Public professional profile", "encodingFormat": "application/pdf", "url": "https://nagarjunr.github.io/assets/nagarjun-rajendran-profile.pdf"}, {"@type": "DigitalDocument", "name": "Plain text professional profile", "encodingFormat": "text/plain", "url": "https://nagarjunr.github.io/assets/nagarjun-rajendran-profile.txt"}]}, {"@type": "WebSite", "@id": "https://nagarjunr.github.io/#website", "url": "https://nagarjunr.github.io/", "name": "Nagarjun. Connected systems. Clear thinking.", "author": {"@id": "https://nagarjunr.github.io/#person"}, "inLanguage": "en"}]}</script>
 </head>
@@ -585,7 +610,7 @@
     <div class="nav wrap">
       <a class="brand" href="#top" aria-label="Nagarjun, home"><img class="brand-mark" src="assets/silicon-to-systems-icon.png" alt="" width="32" height="32"><span>Nagarjun<span class="brand-dot">.</span></span></a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu <span aria-hidden="true">+</span></button><nav class="nav-right" id="site-nav" aria-label="Main navigation">
-        <a href="#work">Work</a><a href="#experience">Experience</a><a href="#fieldnotes">Fieldnotes</a><a href="#newsletter">Newsletter</a><a href="#about">About</a><a class="nav-github" href="https://www.linkedin.com/in/nagarjunr/" target="_blank" rel="noopener noreferrer">Connect <span aria-hidden="true">↗</span><span class="sr-only"> on LinkedIn, opens in a new tab</span></a>
+        <a href="#work">Work</a><a href="#experience">Experience</a><a href="#fieldnotes">Fieldnotes</a><a href="#newsletter">Newsletter</a><a href="#ask" data-ask hidden>Ask</a><a href="#about">About</a><a class="nav-github" href="https://www.linkedin.com/in/nagarjunr/" target="_blank" rel="noopener noreferrer">Connect <span aria-hidden="true">↗</span><span class="sr-only"> on LinkedIn, opens in a new tab</span></a>
         <span class="nav-note mono"><span class="pin" aria-hidden="true"></span>Chicago area, US</span>
       </nav>
     </div>
@@ -705,6 +730,17 @@
       <div class="newsletter-layout">
         <div><p class="newsletter-kicker mono">The anatomy of scale</p><h2 id="newsletter-title">Silicon<br><em>to Systems.</em></h2><p class="newsletter-intro">My newsletter connects the decisions inside a chip with the systems we build around it.</p><p class="newsletter-copy">I write about edge AI, cloud architecture, and the engineering behind systems that scale. Each issue works through a technical question, the constraints that matter, and what they mean in practice.</p><a class="button" href="https://nagarjun.beehiiv.com/" target="_blank" rel="noopener noreferrer">Read and subscribe <span class="arrow" aria-hidden="true">↗</span><span class="sr-only"> to Silicon to Systems, opens in a new tab</span></a></div>
         <div class="newsletter-topics"><p class="mono">Recent writing</p><a href="https://nagarjun.beehiiv.com/p/ai-agent-orchestration-patterns-compared" target="_blank" rel="noopener noreferrer"><span>01 / AI architecture</span><h3>AI agent orchestration patterns</h3><p>How different coordination patterns shape an agent system.</p><span class="sr-only">Read on Silicon to Systems, opens in a new tab</span></a><a href="https://nagarjun.beehiiv.com/p/why-llm-scaling-doesn-t-work-like-microservice-scaling" target="_blank" rel="noopener noreferrer"><span>02 / Cloud &amp; scale</span><h3>Why LLM scaling differs from microservices</h3><p>What changes when serving models becomes an infrastructure problem.</p><span class="sr-only">Read on Silicon to Systems, opens in a new tab</span></a><a href="https://nagarjun.beehiiv.com/p/your-edge-llm-is-waiting-on-memory-not-math" target="_blank" rel="noopener noreferrer"><span>03 / Edge AI</span><h3>Memory, deployment, and the edge</h3><p>The practical limits between a trained model and a working system.</p><span class="sr-only">Read on Silicon to Systems, opens in a new tab</span></a></div>
+      </div>
+    </section>
+    <section class="ask wrap" id="ask" aria-labelledby="ask-title" hidden>
+      <p class="section-label mono"><span>05</span> / Ask</p>
+      <div class="ask-layout">
+        <div><h2 id="ask-title">Ask<br><em>Nagarjun.</em></h2><p class="ask-intro">An AI assistant that answers questions about my work, experience, and writing.</p><p class="ask-note">This is an AI assistant, not a person. It answers from the public profile on this website and can make mistakes. For anything important, connect with me on LinkedIn.</p></div>
+        <div class="ask-panel">
+          <div class="ask-log" id="ask-log" role="log" aria-live="polite" aria-label="Conversation with the AI assistant"><div class="ask-msg bot">Hello. I am an AI assistant for this website. Ask me about Nagarjun's background, projects, skills, or newsletter.</div></div>
+          <div class="ask-suggest" id="ask-suggest"><button type="button">What is your architecture background?</button><button type="button">Tell me about the e-scooter project.</button><button type="button">What does the newsletter cover?</button></div>
+          <form class="ask-form" id="ask-form" autocomplete="off"><label class="sr-only" for="ask-input">Your question</label><input id="ask-input" type="text" maxlength="600" placeholder="Ask a question" required><button type="submit">Send</button></form>
+        </div>
       </div>
     </section>
     <section class="about" id="about" aria-labelledby="about-title"><div class="wrap">
@@ -857,6 +893,66 @@
       window.addEventListener('hashchange', syncHash);
       document.getElementById('year').textContent = String(new Date().getFullYear());
       syncHash();
+    })();
+  </script>
+  <script>
+    (() => {
+      'use strict';
+      const api = (document.querySelector('meta[name="twin-api"]') || {}).content;
+      if (!api) return; // no backend configured: the section stays hidden
+      const section = document.getElementById('ask');
+      const log = document.getElementById('ask-log');
+      const form = document.getElementById('ask-form');
+      const input = document.getElementById('ask-input');
+      const suggest = document.getElementById('ask-suggest');
+      const button = form.querySelector('button');
+      const history = [];
+      section.hidden = false;
+      document.querySelectorAll('[data-ask]').forEach((el) => { el.hidden = false; });
+
+      const add = (text, kind) => {
+        const el = document.createElement('div');
+        el.className = 'ask-msg ' + kind;
+        el.textContent = text;
+        log.appendChild(el);
+        log.scrollTop = log.scrollHeight;
+        return el;
+      };
+
+      const send = async (text) => {
+        text = text.trim();
+        if (!text) return;
+        add(text, 'user');
+        suggest.hidden = true;
+        input.value = '';
+        input.disabled = button.disabled = true;
+        const pending = add('Thinking...', 'bot');
+        try {
+          const response = await fetch(api.replace(/\/$/, '') + '/chat', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ message: text, history: history.slice(-12) }),
+          });
+          const data = await response.json().catch(() => ({}));
+          if (!response.ok) throw new Error(data.detail || 'The assistant is unavailable right now.');
+          pending.textContent = data.response;
+          history.push({ role: 'user', content: text }, { role: 'assistant', content: data.response, sig: data.sig });
+        } catch (error) {
+          pending.className = 'ask-msg error';
+          pending.textContent = error instanceof TypeError
+            ? 'The assistant could not be reached. Please try again later.'
+            : error.message;
+        } finally {
+          input.disabled = button.disabled = false;
+          input.focus();
+          log.scrollTop = log.scrollHeight;
+        }
+      };
+
+      form.addEventListener('submit', (event) => { event.preventDefault(); send(input.value); });
+      suggest.addEventListener('click', (event) => {
+        if (event.target.tagName === 'BUTTON') send(event.target.textContent);
+      });
     })();
   </script>
 </body>
