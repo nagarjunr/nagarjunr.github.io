@@ -2,7 +2,7 @@
 
 Public website: https://nagarjunr.github.io/
 
-This repository must be named `nagarjunr.github.io` for GitHub Pages to serve the site at the account root. The previous `/portfolio/` address redirects to the homepage, preserving query strings and section fragments.
+This repository must be named `nagarjunr.github.io` for GitHub Pages to serve the site at the account root.
 
 ## Website structure
 

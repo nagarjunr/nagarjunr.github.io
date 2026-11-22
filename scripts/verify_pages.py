@@ -24,7 +24,6 @@ def main() -> None:
         for path in public.rglob('*') if path.is_file() and path.name != '.nojekyll'
     }
     expected[''] = expected['index.html']
-    expected['portfolio/'] = expected['portfolio/index.html']
     for attempt in range(1, args.attempts + 1):
         problems = []
         for path, digest in expected.items():

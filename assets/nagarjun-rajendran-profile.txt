@@ -1,5 +1,5 @@
 NAGARJUN RAJENDRAN
-Preferred name: Arjun
+Preferred name: Nagarjun
 Cloud and Technology Solutions Manager, Expert
 Chicago area, Illinois, United States
 nagarjunrajen@gmail.com
@@ -77,10 +77,6 @@ AquaEasy. From a hypothesis to an IoT product.
 Co-founder / Bosch intrapreneurship
 Co-founded AquaEasy within Bosch’s intrapreneurship programme as part of a three-person founding team. I worked on customer discovery and product validation, led IoT gateway firmware architecture and development, and helped demonstrate the working product.
 
-A personal AI twin. A conversation as an interface.
-Personal prototype
-A personal prototype pairing a Next.js chat interface with a Python backend and infrastructure-as-code deployment configuration. It explores how a conversational interface can present professional context while keeping the interface, API, and deployment concerns separate.
-
 A Raspberry Pi. An end-to-end IoT journey.
 Personal project & article / 2020
 A hands-on learning project connecting a Raspberry Pi and GrovePi with Django, MongoDB, and Azure. I used it to explain the IoT journey in a beginner-friendly Medium article, from collecting data to making it useful in a web application.
@@ -90,4 +86,4 @@ IEEE Senior Member
 
 WRITING
 https://medium.com/@nagarjunr
-https://nagarjun.beehiiv.com
+Silicon to Systems: https://nagarjun.beehiiv.com/

@@ -1,7 +1,7 @@
 {
   "basics": {
     "name": "Nagarjun Rajendran",
-    "alternateName": "Arjun",
+    "alternateName": "Nagarjun",
     "label": "Cloud and Technology Solutions Manager, Expert",
     "email": "nagarjunrajen@gmail.com",
     "url": "https://nagarjunr.github.io/",
@@ -26,9 +26,11 @@
       },
       {
         "network": "Newsletter",
-        "url": "https://nagarjun.beehiiv.com"
+        "url": "https://nagarjun.beehiiv.com/",
+        "name": "Silicon to Systems"
       }
-    ]
+    ],
+    "image": "https://nagarjunr.github.io/assets/nagarjun-rajendran.png"
   },
   "work": [
     {
@@ -153,24 +155,13 @@
     },
     {
       "name": "AquaEasy. From a hypothesis to an IoT product.",
-      "description": "Co-founded AquaEasy within Bosch’s intrapreneurship programme as part of a three-person founding team. I worked on customer discovery and product validation, led IoT gateway firmware architecture and development, and helped demonstrate the working product.",
+      "description": "Co-founded AquaEasy within Bosch\u2019s intrapreneurship programme as part of a three-person founding team. I worked on customer discovery and product validation, led IoT gateway firmware architecture and development, and helped demonstrate the working product.",
       "status": "Co-founder / Bosch intrapreneurship",
       "keywords": [
         "IoT gateway design",
         "Product validation",
         "Customer discovery",
         "Intrapreneurship"
-      ]
-    },
-    {
-      "name": "A personal AI twin. A conversation as an interface.",
-      "description": "A personal prototype pairing a Next.js chat interface with a Python backend and infrastructure-as-code deployment configuration. It explores how a conversational interface can present professional context while keeping the interface, API, and deployment concerns separate.",
-      "status": "Personal prototype",
-      "keywords": [
-        "Next.js",
-        "Python",
-        "Generative AI",
-        "Infrastructure as code"
       ]
     },
     {
@@ -198,5 +189,13 @@
   "meta": {
     "lastModified": "2026-11-22",
     "profileType": "Public professional profile"
-  }
+  },
+  "publications": [
+    {
+      "name": "Silicon to Systems",
+      "publisher": "Nagarjun Rajendran",
+      "url": "https://nagarjun.beehiiv.com/",
+      "summary": "A newsletter on edge AI, cloud architecture, and the engineering behind systems that scale."
+    }
+  ]
 }

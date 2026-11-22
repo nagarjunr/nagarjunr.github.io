@@ -15,7 +15,7 @@ PUBLIC_FILES = (
     'index.html', '.nojekyll', 'profile.json', 'llms.txt',
     'robots.txt', 'sitemap.xml',
 )
-PUBLIC_DIRECTORIES = ('assets', 'fieldnotes', 'portfolio')
+PUBLIC_DIRECTORIES = ('assets', 'fieldnotes')
 
 
 class Links(HTMLParser):
