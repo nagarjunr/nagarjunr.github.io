@@ -646,6 +646,82 @@
     .ask-form button:disabled { opacity: .55; cursor: wait; }
     @media (max-width: 760px) { .ask { padding-top: 46px; padding-bottom: 48px; } .ask-layout { grid-template-columns: 1fr; gap: 32px; } .ask-msg { max-width: 94%; } .ask-form input { font-size: 16px; } }
     @media print { .ask { display: none; } }
+
+    /* ===== Material Design 3 layer: tonal surfaces, state layers, elevation, shape capped at 2-3px ===== */
+    :root { --r-xs: 2px; --r-sm: 2px; --r-md: 3px; --r-lg: 3px; --ease: cubic-bezier(.2, 0, 0, 1); --dur-s: 150ms; --dur-m: 250ms; --on-primary:#fff;--primary-container:#CFF3EC;--on-primary-container:#00201C;--secondary-container:#DCE5EE;--on-secondary-container:#0F172B;--outline:#6B7C93;--error:#B3261E;--error-container:#F9DEDC;--on-error-container:#410E0B;
+      --sc-low: color-mix(in srgb, var(--accent) 4%, var(--paper)); --sc: color-mix(in srgb, var(--accent) 7%, var(--paper));
+      --sc-high: color-mix(in srgb, var(--accent) 10%, var(--paper)); --sc-highest: color-mix(in srgb, var(--accent) 13%, var(--paper));
+      --shadow-1: 0 1px 2px rgba(15,23,43,.30), 0 1px 3px 1px rgba(15,23,43,.15);
+      --shadow-2: 0 1px 2px rgba(15,23,43,.30), 0 2px 6px 2px rgba(15,23,43,.15);
+      --shadow-3: 0 1px 3px rgba(15,23,43,.30), 0 4px 8px 3px rgba(15,23,43,.15); }
+    :root[data-theme=dark] { --on-primary:#00201C;--primary-container:#00504A;--on-primary-container:#B8F2E6;--secondary-container:#2B3A55;--on-secondary-container:#E2E8F0;--outline:#8595AD;--error:#F2B8B5;--error-container:#8C1D18;--on-error-container:#F9DEDC; }
+    @media (prefers-color-scheme: dark) { :root:not([data-theme]) { --on-primary:#00201C;--primary-container:#00504A;--on-primary-container:#B8F2E6;--secondary-container:#2B3A55;--on-secondary-container:#E2E8F0;--outline:#8595AD;--error:#F2B8B5;--error-container:#8C1D18;--on-error-container:#F9DEDC; } }
+    .button,.nav-right>.nav-github,.filter,.theme-toggle,.menu-toggle,.text-link,.note-read,.ask-suggest button,.ask-form button,.close-button,.share-note,.layer-button,.back-top { position: relative; isolation: isolate; border-radius: var(--r-sm); transition: background-color var(--dur-s) var(--ease), box-shadow var(--dur-s) var(--ease), color var(--dur-s) var(--ease), border-color var(--dur-s) var(--ease); }
+    .button::after,.nav-right>.nav-github::after,.filter::after,.theme-toggle::after,.menu-toggle::after,.text-link::after,.note-read::after,.ask-suggest button::after,.ask-form button::after,.close-button::after,.share-note::after,.layer-button::after,.back-top::after { content: ''; position: absolute; inset: 0; border-radius: inherit; background: currentColor; opacity: 0; pointer-events: none; transition: opacity var(--dur-s) var(--ease); }
+    .button:hover::after,.nav-right>.nav-github:hover::after,.filter:hover::after,.theme-toggle:hover::after,.menu-toggle:hover::after,.text-link:hover::after,.note-read:hover::after,.ask-suggest button:hover::after,.ask-form button:hover::after,.close-button:hover::after,.share-note:hover::after,.layer-button:hover::after,.back-top:hover::after { opacity: .08; }
+    .button:focus-visible::after,.nav-right>.nav-github:focus-visible::after,.filter:focus-visible::after,.theme-toggle:focus-visible::after,.menu-toggle:focus-visible::after,.text-link:focus-visible::after,.note-read:focus-visible::after,.ask-suggest button:focus-visible::after,.ask-form button:focus-visible::after,.close-button:focus-visible::after,.share-note:focus-visible::after,.layer-button:focus-visible::after,.back-top:focus-visible::after, .button:active::after,.nav-right>.nav-github:active::after,.filter:active::after,.theme-toggle:active::after,.menu-toggle:active::after,.text-link:active::after,.note-read:active::after,.ask-suggest button:active::after,.ask-form button:active::after,.close-button:active::after,.share-note:active::after,.layer-button:active::after,.back-top:active::after { opacity: .10; }
+    button:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+    /* filled button */
+    .button { background: var(--accent); color: var(--on-primary); border: 0; min-height: 48px; padding: 0 24px; gap: 12px; font-size: 14px; letter-spacing: .1px; box-shadow: none; }
+    .button:hover { background: var(--accent); box-shadow: var(--shadow-1); }
+    /* outlined button */
+    .nav-right > .nav-github { border: 1px solid var(--outline); color: var(--accent); min-height: 40px; display: inline-flex; align-items: center; gap: 8px; padding: 0 16px; font-size: 13px; }
+    /* text button */
+    .text-link { color: var(--accent); min-height: 40px; padding: 0 12px; gap: 8px; font-size: 14px; }
+    .text-link:hover { text-decoration: none; }
+    .about .text-link, .about .text-link:hover { color: var(--teal-400); }
+    /* icon buttons */
+    .theme-toggle { width: 48px; height: 48px; border: 0; color: var(--muted); }
+    .menu-toggle { min-height: 48px; border: 1px solid var(--outline); }
+    .close-button { width: 48px; height: 48px; border: 0; }
+    /* filter chips */
+    .filter { min-height: 36px; padding: 0 14px; font-size: 14px; border: 1px solid var(--outline); color: var(--muted); background: transparent; }
+    .filter[aria-pressed=true] { background: var(--secondary-container); color: var(--on-secondary-container); border-color: transparent; }
+    .filter:hover:not([aria-pressed=true]) { border-color: var(--outline); }
+    /* assist chips and tags */
+    .stack li { border: 1px solid var(--line); border-radius: var(--r-xs); padding: 4px 10px; font-size: 11px; color: var(--muted); }
+    .principles span { border-radius: var(--r-xs); }
+    .layer-button { border-radius: var(--r-xs); }
+    /* filled card */
+    .note-card { background: var(--sc-low); border-radius: var(--r-md); overflow: hidden; transition: box-shadow var(--dur-m) var(--ease); }
+    .note-card:hover { box-shadow: var(--shadow-1); }
+    .note-art { border: 0; border-radius: 0; }
+    .note-card .note-meta, .note-card h3, .note-card p { padding-left: 20px; padding-right: 20px; }
+    .note-card .note-read { width: calc(100% - 40px); margin: auto 20px 8px; padding: 12px 0; border-top: 1px solid var(--line); min-height: 48px; border-radius: 0; }
+    .note-card .note-read::after { border-radius: 0; }
+    .note-card h3 { margin-top: 13px; }
+    /* list items with state layer */
+    .newsletter-topics > a { margin: 0 -16px; padding: 20px 16px; border-radius: var(--r-md); transition: background-color var(--dur-s) var(--ease); }
+    .newsletter-topics > a:hover { background: color-mix(in srgb, var(--ink) 6%, transparent); }
+    .newsletter-topics > a:hover h3 { text-decoration: none; }
+    /* elevation instead of offset shadows */
+    .system { box-shadow: var(--shadow-2); border-radius: var(--r-md); }
+    .identity img { border-radius: var(--r-xs); }
+    /* dialog */
+    dialog { border: 0; border-radius: var(--r-md); background: var(--sc-high); box-shadow: var(--shadow-3); overflow: hidden; }
+    dialog::backdrop { background: rgba(15, 23, 43, .32); backdrop-filter: none; }
+    .dialog-top { border-bottom: 0; }
+    .share-note { background: var(--accent); color: var(--on-primary); min-height: 48px; padding: 0 20px; font-size: 14px; border-radius: var(--r-sm); }
+    .share-fallback { border: 0; border-bottom: 2px solid var(--outline); border-radius: var(--r-xs) var(--r-xs) 0 0; background: var(--sc-highest); }
+    /* chat: surface container, tonal messages, filled text field, icon button */
+    .ask-panel { border: 0; border-radius: var(--r-md); background: var(--sc-low); box-shadow: var(--shadow-1); overflow: hidden; }
+    .ask-log { padding: 16px; gap: 8px; }
+    .ask-msg { border: 0; border-radius: var(--r-md); max-width: 82%; padding: 10px 16px; font-size: 14px; line-height: 1.65; }
+    .ask-msg.bot { background: var(--sc-highest); color: var(--ink); }
+    .ask-msg.user { background: var(--primary-container); color: var(--on-primary-container); }
+    .ask-msg.error { background: var(--error-container); color: var(--on-error-container); border: 0; }
+    .ask-suggest { padding: 0 16px 12px; gap: 8px; }
+    .ask-suggest button { min-height: 32px; padding: 0 12px; border: 1px solid var(--line); border-radius: var(--r-xs); background: transparent; color: var(--ink); font-size: 13px; }
+    .ask-suggest button:hover { border-color: var(--line); color: var(--ink); }
+    .ask-form { border: 0; margin: 4px 16px 16px; gap: 8px; align-items: stretch; }
+    .ask-form input { height: 48px; padding: 0 16px; background: var(--sc-highest); border-radius: var(--r-xs) var(--r-xs) 0 0; border-bottom: 2px solid var(--outline); font-size: 16px; color: var(--ink); transition: border-color var(--dur-s) var(--ease); }
+    .ask-form input::placeholder { color: var(--muted); }
+    .ask-form input:focus { border-bottom-color: var(--accent); outline: none; }
+    .ask-form button { width: 48px; height: 48px; padding: 0; border: 0; border-radius: var(--r-sm); background: var(--accent); color: var(--on-primary); display: inline-grid; place-items: center; flex-shrink: 0; }
+    .ask-form button .icon { width: 22px; height: 22px; }
+    .ask-form button:disabled, .ask-form input:disabled { opacity: .38; cursor: not-allowed; }
+    @media (max-width: 760px) { .ask-msg { max-width: 90%; } .note-card { margin-bottom: 4px; } }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; } }
   </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Person", "@id": "https://nagarjunr.github.io/#person", "name": "Nagarjun Rajendran", "alternateName": "Nagarjun", "url": "https://nagarjunr.github.io/", "image": "https://nagarjunr.github.io/assets/nagarjun-rajendran.png", "email": "nagarjunrajen@gmail.com", "jobTitle": "Cloud and Technology Solutions Manager, Expert", "worksFor": {"@type": "Organization", "name": "Robert Bosch LLC"}, "description": "Cloud and technology solutions professional with 15 years of experience across software applications, embedded systems, IoT, and cloud architecture. Focused on practical GenAI, technical leadership, and clear decisions for delivery teams.", "knowsAbout": ["IoT solution architecture", "Cloud solution architecture", "Amazon Web Services (AWS)", "Microsoft Azure", "Generative AI (GenAI)", "System design", "Integration architecture", "Technical product ownership", "Technical leadership", "Embedded systems", "Python", "C and C++", "Infrastructure as code", "Customer discovery"], "sameAs": ["https://www.linkedin.com/in/nagarjunr/", "https://github.com/nagarjunr", "https://medium.com/@nagarjunr", "https://nagarjun.beehiiv.com"], "alumniOf": [{"@type": "CollegeOrUniversity", "name": "National University of Singapore"}, {"@type": "CollegeOrUniversity", "name": "Anna University, India"}], "memberOf": {"@type": "Organization", "name": "IEEE"}}, {"@type": "ProfilePage", "@id": "https://nagarjunr.github.io/#profile", "url": "https://nagarjunr.github.io/", "name": "Nagarjun Rajendran | IoT Cloud Architecture, GenAI and Technical Leadership", "dateModified": "2026-11-22", "mainEntity": {"@id": "https://nagarjunr.github.io/#person"}, "inLanguage": "en", "hasPart": [{"@type": "DigitalDocument", "name": "Public professional profile", "encodingFormat": "application/pdf", "url": "https://nagarjunr.github.io/assets/nagarjun-rajendran-profile.pdf"}, {"@type": "DigitalDocument", "name": "Plain text professional profile", "encodingFormat": "text/plain", "url": "https://nagarjunr.github.io/assets/nagarjun-rajendran-profile.txt"}]}, {"@type": "WebSite", "@id": "https://nagarjunr.github.io/#website", "url": "https://nagarjunr.github.io/", "name": "Nagarjun. Connected systems. Clear thinking.", "author": {"@id": "https://nagarjunr.github.io/#person"}, "inLanguage": "en"}]}</script>
 </head>
@@ -785,7 +861,7 @@
         <div class="ask-panel">
           <div class="ask-log" id="ask-log" role="log" aria-live="polite" aria-label="Conversation with the AI assistant"><div class="ask-msg bot">Hello. I am an AI assistant for this website. Ask me about Nagarjun's background, projects, skills, or newsletter.</div></div>
           <div class="ask-suggest" id="ask-suggest"><button type="button">What is your architecture background?</button><button type="button">Tell me about the e-scooter project.</button><button type="button">What does the newsletter cover?</button></div>
-          <form class="ask-form" id="ask-form" autocomplete="off"><label class="sr-only" for="ask-input">Your question</label><input id="ask-input" type="text" maxlength="600" placeholder="Ask a question" required><button type="submit">Send <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-send"/></svg></button></form>
+          <form class="ask-form" id="ask-form" autocomplete="off"><label class="sr-only" for="ask-input">Your question</label><input id="ask-input" type="text" maxlength="600" placeholder="Ask a question" required><button type="submit"><span class="sr-only">Send</span><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-send"/></svg></button></form>
         </div>
       </div>
     </section>
