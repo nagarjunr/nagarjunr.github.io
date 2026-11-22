@@ -68,7 +68,7 @@
     },
     {
       "name": "Pirate3D",
-      "position": "Embedded Software Architect",
+      "position": "Embedded Software Engineer",
       "location": "Singapore",
       "startDate": "2014-05",
       "endDate": "2015-08",
@@ -211,24 +211,12 @@
     {
       "name": "3D printer firmware. From documentation to over-the-air updates.",
       "description": "Held system-level responsibility for the printer microcontroller firmware. I documented the open-source base, designed a hardware abstraction API in C, added reliable controller-to-CPU communication, and built the over-the-air firmware update mechanism.",
-      "status": "Embedded software architect / Pirate3D, 2014 to 2015",
+      "status": "Embedded software engineer / Pirate3D, 2014 to 2015",
       "keywords": [
         "Embedded C",
         "Embedded Linux",
         "UART and SPI",
         "OTA updates"
-      ]
-    },
-    {
-      "name": "A Raspberry Pi. An end-to-end IoT journey.",
-      "description": "A hands-on learning project connecting a Raspberry Pi and GrovePi with Django, MongoDB, and Azure. I used it to explain the IoT journey in a beginner-friendly Medium article, from collecting data to making it useful in a web application.",
-      "status": "Personal project & article / 2020",
-      "keywords": [
-        "Raspberry Pi",
-        "GrovePi",
-        "Django",
-        "MongoDB",
-        "Azure"
       ]
     }
   ],
@@ -250,6 +238,12 @@
       "publisher": "Nagarjun Rajendran",
       "url": "https://nagarjun.beehiiv.com/",
       "summary": "A blog on edge AI, cloud architecture, and the engineering behind systems that scale."
+    },
+    {
+      "name": "Internet of Things 101: An end-to-end IoT journey",
+      "publisher": "Medium",
+      "url": "https://medium.com/@nagarjunr/internet-of-things-101-an-end-to-end-iot-journey-6d8ea5cfe13c",
+      "summary": "A hands-on learning project connecting a Raspberry Pi and GrovePi with Django, MongoDB, and Azure, from collecting data to a web application. Published in 2020."
     }
   ]
 }

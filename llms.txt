@@ -12,6 +12,13 @@
 ## Blog
 
 - [Silicon to Systems](https://nagarjun.beehiiv.com/): Nagarjun Rajendran on edge AI, cloud architecture, and the engineering behind systems that scale.
+- [Agentic Architecture Arc, Part 1](https://nagarjun.beehiiv.com/p/before-you-build-the-ai-agents-the-eight-layer-production-stack): the eight layers a production agent system needs.
+- [Agentic Architecture Arc, Part 2](https://nagarjun.beehiiv.com/p/ai-agent-orchestration-patterns-compared): orchestration patterns and a decision tree.
+- [Agentic Architecture Arc, Part 3](https://nagarjun.beehiiv.com/p/ai-agent-tools-identity-and-policy-compared): tools, identity, and policy for production agents.
+- [Why LLM scaling does not work like microservice scaling](https://nagarjun.beehiiv.com/p/why-llm-scaling-doesn-t-work-like-microservice-scaling)
+- [NVIDIA NVLink and the myth of the single GPU](https://nagarjun.beehiiv.com/p/nvidia-s-nvlink-and-the-myth-of-the-single-gpu)
+- [The physics of memory](https://nagarjun.beehiiv.com/p/the-physics-of-memory-why-llms-are-memory-bound-and-not-compute-bound)
+- [Internet of Things 101: An end-to-end IoT journey](https://medium.com/@nagarjunr/internet-of-things-101-an-end-to-end-iot-journey-6d8ea5cfe13c): Medium, 2020.
 
 ## Notes
 
