@@ -1,0 +1,20 @@
+# Nagarjun Rajendran (Arjun)
+
+> Public professional profile. IoT Cloud Solutions Architecture, practical GenAI, and technical leadership.
+
+## Profile
+
+- [Personal website](https://nagarjunr.github.io/): career overview, selected projects, education, skills, and writing.
+- [Structured profile](https://nagarjunr.github.io/profile.json): the public career information as JSON, with ISO dates and explicit project stages.
+- [Text profile](https://nagarjunr.github.io/assets/nagarjun-rajendran-profile.txt): a plain-text professional summary with standard resume headings.
+- [PDF profile](https://nagarjunr.github.io/assets/nagarjun-rajendran-profile.pdf): the two-page downloadable professional profile.
+
+## Fieldnotes
+
+- [Connection failures](https://nagarjunr.github.io/fieldnotes/connection.html): IoT reliability and recovery.
+- [Giving AI a useful job](https://nagarjunr.github.io/fieldnotes/ai-job.html): practical GenAI scope and evidence.
+- [Clarity in architecture](https://nagarjunr.github.io/fieldnotes/clarity.html): ownership, decision boundaries, and technical leadership.
+
+## Context
+
+Current formal role: Cloud and Technology Solutions Manager, Expert, Robert Bosch LLC. The e-scooter device figure is an architecture design capacity. The personal AI twin is a prototype. The energy advisor is planned. Employer descriptions are limited to broad responsibilities and personal achievements.

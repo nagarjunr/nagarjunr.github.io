@@ -1,4 +1,5 @@
-"""Check that GitHub Pages serves the reviewed public files after deployment."""
+"""Check that GitHub Pages serves the staged website and its public files."""
+
 from __future__ import annotations
 
 import argparse
@@ -15,33 +16,33 @@ def main() -> None:
     parser.add_argument('--attempts', type=int, default=8)
     args = parser.parse_args()
     base_url = args.base_url.rstrip('/') + '/'
-    docs = Path(__file__).resolve().parents[1] / 'docs'
-    paths = [
-        'index.html',
-        'profile.json',
-        'llms.txt',
-        'assets/nagarjun-rajendran-profile.pdf',
-        'assets/nagarjun-rajendran-profile.txt',
-        'assets/fonts/ArbutusSlab-Regular.ttf',
-        'fieldnotes/connection.html',
-    ]
-    expected = {path: hashlib.sha256((docs / path).read_bytes()).digest() for path in paths}
+    public = Path(__file__).resolve().parents[1] / '_site'
+    if not (public / 'index.html').is_file():
+        raise SystemExit('Run python3 scripts/prepare_pages.py first.')
+    expected = {
+        path.relative_to(public).as_posix(): hashlib.sha256(path.read_bytes()).digest()
+        for path in public.rglob('*') if path.is_file() and path.name != '.nojekyll'
+    }
+    expected[''] = expected['index.html']
+    expected['portfolio/'] = expected['portfolio/index.html']
     for attempt in range(1, args.attempts + 1):
         problems = []
-        for path in paths:
+        for path, digest in expected.items():
             try:
-                request = Request(urljoin(base_url, path), headers={'User-Agent': 'Portfolio-Pages-Verification', 'Cache-Control': 'no-cache'})
+                request = Request(urljoin(base_url, path), headers={
+                    'User-Agent': 'Portfolio-Pages-Verification', 'Cache-Control': 'no-cache',
+                })
                 with urlopen(request, timeout=20) as response:
                     data = response.read()
-                if hashlib.sha256(data).digest() != expected[path]:
-                    problems.append(path + ': published content differs from this commit')
+                if hashlib.sha256(data).digest() != digest:
+                    problems.append((path or '/') + ': published content differs from this commit')
             except Exception as error:
-                problems.append(path + ': ' + str(error))
+                problems.append((path or '/') + ': ' + str(error))
         if not problems:
-            print('Verified public website, structured profile, fieldnote, font, PDF and text download.')
+            print(f'Verified {len(expected)} public URLs against this commit.')
             print('Published URL: ' + base_url)
             return
-        print('Attempt ' + str(attempt) + ': ' + '; '.join(problems))
+        print('Attempt ' + str(attempt) + ': ' + '; '.join(problems), flush=True)
         if attempt < args.attempts:
             time.sleep(15)
     raise SystemExit('Published files could not be verified. Check Pages source and deployment status.')

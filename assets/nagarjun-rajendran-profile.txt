@@ -5,7 +5,7 @@ Chicago area, Illinois, United States
 nagarjunrajen@gmail.com
 https://www.linkedin.com/in/nagarjunr/
 https://github.com/nagarjunr
-https://nagarjunr.github.io/portfolio/
+https://nagarjunr.github.io/
 
 PROFESSIONAL SUMMARY
 Cloud and technology solutions professional with 15 years of experience across software applications, embedded systems, IoT, and cloud architecture. Focused on practical GenAI, technical leadership, and clear decisions for delivery teams.
