@@ -51,7 +51,7 @@ The short downloadable profile is a public summary, not a copy of the full priva
 
 ## Verification
 
-Static checks cover JavaScript syntax, HTML structure, navigation targets, menu ARIA references, article templates, external-link protections, exact palette colours, font loading configuration, single-weight typography, and public-file secret patterns. Browser rendering could not be verified under the workspace's browser process restrictions. A successful GitHub Pages deployment must be verified after Pages is enabled.
+Static checks cover JavaScript syntax, HTML structure, navigation targets, menu ARIA references, article templates, external-link protections, exact palette colours, font loading configuration, single-weight typography, and public-file secret patterns. The PDF was visually reviewed and its text extraction was checked. Browser rendering could not be verified under the workspace's browser process restrictions. The Pages workflow verifies that the public website, profile data, font, article, PDF, and text download match the deployed commit.
 
 ## Maintenance
 
