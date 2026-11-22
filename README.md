@@ -33,6 +33,6 @@ Open http://localhost:8080. To verify the served files, run `python3 scripts/ver
 
 ## Content and presentation
 
-The site retains the reviewed professional content, Arbutus Slab typography, and Teal Cyan Sky Slate palette. Career facts follow the supplied October 2026 resume. Employer information is limited to broad roles, responsibilities, and resume-backed personal achievements. Internal architecture, customer identities, operating details, security findings, budgets, funding, and strategy are excluded. The e-scooter device figure is design capacity; the AI twin is a personal prototype; the energy advisor is planned.
+The site retains the reviewed professional content, Arbutus Slab typography, and Teal Cyan Sky Slate palette. Career facts follow the supplied October 2026 resume. Employer information is limited to broad roles, responsibilities, and resume-backed personal achievements. Internal architecture, customer identities, operating details, security findings, budgets, funding, and strategy are excluded. The e-scooter device figure is design capacity; the AI twin is a personal prototype.
 
 The public profile PDF contains selectable text in a single column, with standard headings, explicit skills and dates, and an embedded font. It is a public summary, with no private phone number. Career changes should be reflected consistently in the homepage, structured profile, PDF, and plain-text profile.

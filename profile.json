@@ -93,6 +93,12 @@
   ],
   "education": [
     {
+      "institution": "University of Illinois Urbana-Champaign",
+      "studyType": "Master's",
+      "area": "Management",
+      "summary": "In progress"
+    },
+    {
       "institution": "National University of Singapore",
       "studyType": "Master of Science",
       "area": "Electrical and Computer Engineering",
@@ -226,7 +232,8 @@
   "interests": [
     "Practical GenAI",
     "Cloud governance",
-    "Technical leadership"
+    "Technical leadership",
+    "Applied AI: scalability, trust, and monitoring"
   ],
   "meta": {
     "lastModified": "2026-11-22",
