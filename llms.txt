@@ -9,11 +9,11 @@
 - [Text profile](https://nagarjunr.github.io/assets/nagarjun-rajendran-profile.txt): a plain-text professional summary with standard resume headings.
 - [PDF profile](https://nagarjunr.github.io/assets/nagarjun-rajendran-profile.pdf): the two-page downloadable professional profile.
 
-## Newsletter
+## Blog
 
 - [Silicon to Systems](https://nagarjun.beehiiv.com/): Nagarjun Rajendran on edge AI, cloud architecture, and the engineering behind systems that scale.
 
-## Fieldnotes
+## Notes
 
 - [Connection failures](https://nagarjunr.github.io/fieldnotes/connection.html): IoT reliability and recovery.
 - [Giving AI a useful job](https://nagarjunr.github.io/fieldnotes/ai-job.html): practical GenAI scope and evidence.

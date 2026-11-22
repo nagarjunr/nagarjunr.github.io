@@ -6,7 +6,7 @@ This repository must be named `nagarjunr.github.io` for GitHub Pages to serve th
 
 ## Themes and icons
 
-The site has light and dark themes. It follows the visitor's system setting by default. The toggle in the header saves an explicit choice in the browser (`localStorage`, key `theme`). All colours come from CSS variables in `index.html` (`:root` for light, `:root[data-theme=dark]` for dark, plus a `prefers-color-scheme` fallback for visitors without JavaScript). The fieldnote pages use the same palette and follow the saved or system theme.
+The site has light and dark themes. It follows the visitor's system setting by default. The toggle in the header saves an explicit choice in the browser (`localStorage`, key `theme`). All colours come from CSS variables in `index.html` (`:root` for light, `:root[data-theme=dark]` for dark, plus a `prefers-color-scheme` fallback for visitors without JavaScript). The note pages use the same palette and follow the saved or system theme.
 
 Icons are inline SVG from [Google Material Symbols](https://fonts.google.com/icons) (Outlined, Apache License 2.0), defined once as a sprite at the top of `index.html` and reused with `<use href="#i-...">`. No icon font or external request is needed.
 

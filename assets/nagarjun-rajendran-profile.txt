@@ -65,6 +65,18 @@ Aug 2017 - Jul 2018
 
 SELECTED PROJECTS
 
+GenAI for manufacturing launches. From prototype to evidence.
+Technical lead & cloud solutions architect
+Technical lead and cloud solutions architect for a GenAI solution that helps manufacturing plants track the readiness quality of their production lines. I shaped the architecture, grounded the assistant in structured plant data with a focus on accuracy and governance, and delivered a working prototype.
+
+Azure platform. Governance by design.
+Lead architect / Azure cloud platform
+Lead architect for an enterprise Azure cloud platform. I define the governance model, including policies, role-based access, and tagging standards, and the integration architecture of in-house tools around the platform, so teams can build safely and consistently.
+
+Cloud strategy. Shaping what comes next.
+Contribution / cloud strategy
+Contributed to the company cloud strategy, helping shape the direction of future digital business initiatives. Alongside it, I assess how emerging technologies such as GenAI, Zero Trust, and ambient intelligence could matter for future business lines.
+
 Cloud platforms. Connected mobility.
 Architecture & technical product ownership
 Cloud solution architecture, partner integrations, and technical product ownership in mobility and logistics. My work connects solution design with delivery teams and business needs, including leading a regional five-person solutions team as Technical Product Owner.
@@ -76,6 +88,14 @@ Architected an Azure-based connected e-scooter solution designed to support up t
 AquaEasy. From a hypothesis to an IoT product.
 Co-founder / Bosch intrapreneurship
 Co-founded AquaEasy within Bosch’s intrapreneurship programme as part of a three-person founding team. I worked on customer discovery and product validation, led IoT gateway firmware architecture and development, and helped demonstrate the working product.
+
+Automotive software. Embedded, tested, automated.
+Embedded software engineer / Continental Automotive, 2015 to 2017
+Built embedded software in C and C++ for automotive control interfaces, including LED control and touch-sensing modules. I introduced the Google Test framework for unit testing and automated module tests in Python, cutting one test run from five hours to 20 minutes.
+
+3D printer firmware. From documentation to over-the-air updates.
+Embedded software architect / Pirate3D, 2014 to 2015
+Held system-level responsibility for the printer microcontroller firmware. I documented the open-source base, designed a hardware abstraction API in C, added reliable controller-to-CPU communication, and built the over-the-air firmware update mechanism.
 
 A Raspberry Pi. An end-to-end IoT journey.
 Personal project & article / 2020
