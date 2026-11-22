@@ -1,0 +1,839 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#F8FAFC">
+  <meta name="description" content="Nagarjun Rajendran, known as Arjun. IoT Cloud Solutions Architecture, practical GenAI, technical leadership, and fieldnotes from hands-on learning.">
+  <title>Arjun | IoT Cloud Architecture, GenAI &amp; Technical Leadership</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230F172B'/%3E%3Cpath d='M17 46 30 17h5l13 29h-7l-3-7H26l-3 7zm12-13h7l-3.5-9z' fill='%2300D5BE'/%3E%3C/svg%3E">
+  <link rel="preload" href="assets/fonts/ArbutusSlab-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="alternate" type="application/json" href="profile.json" title="Machine-readable professional profile">
+  <link rel="canonical" href="https://nagarjunr.github.io/portfolio/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Arjun | Connected systems. Clear thinking.">
+  <meta property="og:description" content="Nagarjun Rajendran on IoT Cloud Solutions Architecture, practical GenAI, and technical leadership.">
+  <meta property="og:url" content="https://nagarjunr.github.io/portfolio/">
+  <style>
+    @font-face {
+      font-family: 'Arbutus Slab';
+      src: url('assets/fonts/ArbutusSlab-Regular.ttf') format('truetype');
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+    }
+    :root {
+      --sky-500: #00A6F4;
+      --teal-400: #00D5BE;
+      --teal-700: #00786F;
+      --cyan-400: #00D3F2;
+      --teal-600: #009689;
+      --slate-900: #0F172B;
+      --slate-50: #F8FAFC;
+      --slate-100: #F1F5F9;
+      --slate-200: #E2E8F0;
+      --slate-300: #CAD5E2;
+      --slate-600: #45556C;
+      --slate-800: #1D293D;
+      --paper: var(--slate-50);
+      --white: var(--slate-50);
+      --ink: var(--slate-900);
+      --muted: var(--slate-600);
+      --line: var(--slate-200);
+      --accent: var(--teal-700);
+      --wash: var(--slate-100);
+      --display: 'Arbutus Slab', Georgia, 'Times New Roman', serif;
+      --sans: 'Arbutus Slab', Georgia, 'Times New Roman', serif;
+      --mono: 'Arbutus Slab', Georgia, 'Times New Roman', serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 32px; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
+    button, a { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
+    a { color: inherit; }
+    button { font: inherit; color: inherit; cursor: pointer; }
+    button:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid var(--teal-700); outline-offset: 5px; }
+    .system button:focus-visible { outline-color: var(--teal-400); }
+    ::selection { background: var(--teal-700); color: var(--slate-50); }
+    .wrap { max-width: 1340px; margin: auto; padding-left: 64px; padding-right: 64px; }
+    .skip { position: fixed; top: 10px; left: 10px; z-index: 99; padding: 14px; background: var(--ink); color: var(--slate-50); transform: translateY(-200%); }
+    .skip:focus { transform: translateY(0); }
+    .mono { font: 10px/1.6 var(--mono); letter-spacing: 1.2px; text-transform: uppercase; }
+    .arrow { display: inline-block; transition: transform .2s; }
+    .text-link:hover .arrow, .button:hover .arrow { transform: translate(3px, -3px); }
+    header { position: relative; z-index: 5; border-top: 5px solid var(--slate-900); border-bottom: 1px solid var(--line); }
+    .nav { height: 91px; display: flex; align-items: center; justify-content: space-between; gap: 30px; }
+    .brand { display: flex; align-items: center; gap: 12px; font-size: 28px; font-weight: 400; letter-spacing: -1.5px; text-decoration: none; }
+    .brand-mark { width: 31px; height: 31px; display: grid; place-items: center; background: var(--slate-900); color: var(--teal-400); font: 18px/1 var(--mono); letter-spacing: -4px; padding-right: 4px; }
+    .brand-dot { color: var(--teal-700); }
+    .nav-right { display: flex; align-items: center; gap: 31px; }
+    .nav-right > a { text-decoration: none; font-size: 12px; padding: 7px 0; }
+    .nav-right > a:hover { text-decoration: underline; text-underline-offset: 6px; text-decoration-color: var(--teal-700); }
+    .nav-right > .nav-github { padding: 10px 14px; border: 1px solid var(--slate-900); }
+    .nav-note { display: flex; align-items: center; gap: 9px; color: var(--muted); border-left: 1px solid var(--line); padding-left: 23px; font-size: 9px; }
+    .pin { width: 6px; height: 6px; background: var(--teal-700); border-radius: 50%; }
+    .hero { padding-top: 65px; padding-bottom: 30px; }
+    .hero-eyebrow { display: flex; align-items: center; gap: 12px; margin-bottom: 29px; }
+    .hero-eyebrow::before { content: ''; width: 28px; height: 2px; background: var(--teal-700); }
+    .hero-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 62px; align-items: center; }
+    .hero h1 { font-size: clamp(56px, 5.8vw, 82px); font-weight: 400; line-height: 1.045; letter-spacing: -4px; margin: 0 0 27px; }
+    .hero h1 em { color: var(--teal-700); font-family: var(--display); font-weight: 400; letter-spacing: -3.6px; }
+    .hero-intro { font-size: 17px; line-height: 1.8; max-width: 450px; margin: 0; color: var(--muted); }
+    .hero-intro strong { color: var(--ink); font-weight: 400; }
+    .actions { display: flex; align-items: center; gap: 26px; margin-top: 32px; flex-wrap: wrap; }
+    .button { display: inline-flex; align-items: center; justify-content: center; gap: 30px; border: 1px solid var(--ink); padding: 17px 21px; min-height: 50px; background: var(--ink); color: var(--slate-50); font-size: 12px; text-decoration: none; transition: background .2s; }
+    .button:hover { background: var(--slate-900); box-shadow: 4px 4px 0 var(--teal-400); }
+    .text-link { display: inline-flex; align-items: center; gap: 18px; text-decoration: none; font-size: 12px; }
+    .text-link:hover { text-decoration: underline; text-underline-offset: 5px; }
+    .hero-caption { display: flex; align-items: center; gap: 10px; margin-top: 33px; color: var(--muted); font-size: 11px; }
+    .hero-caption::before { content: '↳'; color: var(--teal-700); font-size: 20px; }
+    .system { position: relative; background: var(--slate-900); color: var(--slate-50); box-shadow: 12px 12px 0 #00786F26; margin-top: 8px; overflow: hidden; }
+    .system-top { display: flex; justify-content: space-between; align-items: center; padding: 23px 25px 0; }
+    .system-top .mono { font-size: 9px; letter-spacing: 1px; }
+    .system-live { display: flex; align-items: center; gap: 7px; color: var(--teal-400); }
+    .system-live::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--teal-400); }
+    .system-art { width: 100%; height: auto; display: block; }
+    .system-art .gridline { stroke: var(--slate-50); stroke-opacity: .13; stroke-width: 1; }
+    .system-art .route { fill: none; stroke: var(--slate-50); stroke-width: 1; stroke-dasharray: 3 5; opacity: .35; }
+    .system-art .route-active { fill: none; stroke: var(--teal-400); stroke-width: 1.7; stroke-dasharray: 5 9; animation: signal 8s linear infinite; }
+    .system-art .layer { transition: opacity .3s; }
+    .system-art text { font-family: var(--mono); letter-spacing: 2px; font-size: 10px; }
+    .system-art .fine { font-size: 8px; letter-spacing: 1.2px; fill: var(--slate-50); }
+    .system-art .device-icon { fill: none; stroke: var(--slate-50); stroke-width: 1.2; }
+    .system-art .active-surface { fill: var(--slate-900); stroke: var(--sky-500); transition: fill .3s; }
+    .system-art .layer-title { fill: var(--slate-50); }
+    .system-art .is-active .active-surface { fill: var(--teal-400); stroke: var(--teal-400); }
+    .system-art .is-active .layer-title { fill: var(--slate-900); }
+    .system-controls { display: flex; gap: 8px; padding: 0 24px 20px; }
+    .layer-button { flex: 1; padding: 9px 12px; border: 1px solid #F8FAFC80; min-height: 37px; background: transparent; color: var(--slate-50); font: 10px/1.2 var(--mono); }
+    .layer-button[aria-pressed=true] { background: var(--teal-400); color: var(--slate-900); border-color: var(--teal-400); }
+    .layer-button:hover { border-color: var(--teal-400); }
+    .system-insight { display: grid; grid-template-columns: 25px 1fr; gap: 11px; min-height: 112px; padding: 20px 25px 23px; border-top: 1px solid #F8FAFC38; }
+    .insight-index { font: 10px var(--mono); color: var(--teal-400); padding-top: 3px; }
+    .insight-title { font-size: 12px; font-weight: 400; margin: 0 0 7px; }
+    .insight-copy { font-size: 11px; line-height: 1.75; color: var(--slate-300); margin: 0; max-width: 330px; }
+    .hero-bottom { display: flex; justify-content: space-between; align-items: center; margin-top: 51px; padding: 28px 0 17px; border-top: 1px solid var(--line); gap: 20px; }
+    .hero-bottom > .mono { color: var(--muted); font-size: 9px; }
+    .focus-list { display: flex; gap: 23px; align-items: center; font-size: 11px; }
+    .focus-list span + span::before { content: '+'; color: var(--teal-700); margin-right: 23px; font: 11px var(--mono); }
+    .scroll-cue { font-size: 19px; text-decoration: none; }
+    .section-label { display: flex; align-items: center; gap: 13px; color: var(--muted); margin: 0 0 23px; }
+    .section-label > span { color: var(--ink); border-bottom: 2px solid var(--teal-700); padding-bottom: 2px; }
+    .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 35px; }
+    .section-heading h2, .about h2 { font-size: 44px; line-height: 1.13; letter-spacing: -1.8px; font-weight: 400; margin: 0; }
+    .section-heading h2 em, .about h2 em { font-family: var(--display); font-weight: 400; }
+    .section-heading > p { font-size: 13px; line-height: 1.85; max-width: 305px; margin: 0; color: var(--muted); }
+    .work { border-top: 1px solid var(--line); padding-top: 63px; padding-bottom: 70px; }
+    .work-list { margin-top: 38px; border-top: 1px solid var(--line); }
+    .work-item { display: grid; grid-template-columns: 45px 1.1fr 1.3fr; gap: 26px; padding: 30px 0; border-bottom: 1px solid var(--line); }
+    .work-index { color: var(--teal-700); font: 12px var(--mono); padding-top: 4px; }
+    .work-title h3 { margin: 0 0 13px; font-size: 23px; line-height: 1.25; letter-spacing: -.6px; font-weight: 400; }
+    .work-status { display: inline-flex; align-items: center; gap: 7px; font: 9px/1.6 var(--mono); text-transform: uppercase; letter-spacing: .6px; }
+    .work-status::before { content: ''; display: block; width: 6px; height: 6px; background: var(--teal-700); }
+    .work-status.concept::before { background: transparent; border: 1px solid var(--slate-900); }
+    .work-detail p { font-size: 13px; line-height: 1.9; color: var(--muted); margin: 0 0 14px; }
+    .stack { display: flex; gap: 7px; flex-wrap: wrap; list-style: none; padding: 0; margin: 0; }
+    .stack li { border: 1px solid var(--line); padding: 5px 8px; font: 9px/1.4 var(--mono); }
+    .work-footnote { color: var(--muted); font-size: 11px; line-height: 1.8; margin: 20px 0 0 71px; max-width: 760px; }
+    .fieldnotes { border-top: 1px solid var(--line); padding-top: 64px; padding-bottom: 75px; }
+    .note-filters { display: flex; gap: 6px; margin: 31px 0 27px; flex-wrap: wrap; }
+    .filter { padding: 8px 14px; min-height: 35px; border: 1px solid transparent; background: none; color: var(--ink); font-size: 11px; }
+    .filter[aria-pressed=true] { background: var(--ink); color: var(--slate-50); }
+    .filter:hover:not([aria-pressed=true]) { border-color: var(--ink); }
+    .notes-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 25px; }
+    .note-card { display: flex; flex-direction: column; min-width: 0; }
+    .note-card[hidden] { display: none; }
+    .note-art { aspect-ratio: 1.66; position: relative; overflow: hidden; display: grid; place-items: center; border: 1px solid #0F172B38; background: #00786F14; }
+    .note-art svg { width: 100%; height: 100%; display: block; transition: transform .5s; }
+    .note-card:hover .note-art svg { transform: scale(1.04); }
+    .art-caption { position: absolute; left: 15px; bottom: 12px; font: 8px var(--mono); letter-spacing: 1px; color: var(--ink); }
+    .note-meta { display: flex; justify-content: space-between; gap: 12px; margin-top: 21px; font: 8px var(--mono); letter-spacing: .5px; text-transform: uppercase; }
+    .note-meta span:first-child { border-bottom: 2px solid var(--teal-700); padding-bottom: 4px; }
+    .note-card h3 { font-size: 23px; letter-spacing: -.65px; line-height: 1.3; font-weight: 400; margin: 13px 0 10px; }
+    .note-card p { font-size: 12px; line-height: 1.85; color: var(--muted); margin: 0 0 23px; }
+    .note-read { background: none; border: 0; border-top: 1px solid var(--line); padding: 15px 0 0; display: flex; align-items: center; justify-content: space-between; text-align: left; font-size: 11px; width: 100%; margin-top: auto; }
+    .note-read .arrow { font-size: 19px; }
+    .note-read:hover .arrow { transform: translate(3px, -3px); }
+    .filter-status { font-size: 11px; color: var(--muted); margin: 24px 0 0; min-height: 15px; }
+    .series-note { margin: 10px 0 0; font-size: 11px; line-height: 1.9; color: var(--muted); }
+    .series-tags { display: flex; flex-wrap: wrap; gap: 8px 21px; margin-top: 22px; padding-top: 21px; border-top: 1px solid var(--line); font: 9px/1.7 var(--mono); }
+    .about { background: var(--slate-900); color: var(--slate-50); padding-top: 66px; padding-bottom: 67px; }
+    .about .section-label, .about .section-label > span { color: var(--slate-50); }
+    .about .section-label > span { border-color: var(--teal-400); }
+    .about-grid { display: grid; grid-template-columns: .95fr 1.25fr; gap: 83px; }
+    .about h2 { font-size: 46px; max-width: 390px; }
+    .about h2 em { color: var(--teal-400); }
+    .about-intro { font-size: 14px; line-height: 1.9; margin: 2px 0 20px; color: var(--slate-300); }
+    .about-intro strong { font-weight: 400; color: var(--slate-50); }
+    .about-note { font-size: 12px; line-height: 1.9; color: var(--slate-300); max-width: 330px; margin-top: 25px; }
+    .about-name { font: 10px/1.7 var(--mono); letter-spacing: .5px; color: var(--slate-50); margin-top: 29px; }
+    .principles { display: flex; gap: 7px; flex-wrap: wrap; margin-top: 25px; }
+    .principles span { font: 9px var(--mono); padding: 9px 12px; border: 1px solid #F8FAFC66; color: var(--slate-50); }
+    .credentials { border-top: 1px solid #F8FAFC40; margin: 27px 0 0; padding: 0; list-style: none; }
+    .credentials li { padding: 15px 0; border-bottom: 1px solid #F8FAFC40; display: grid; grid-template-columns: 105px 1fr; gap: 18px; align-items: baseline; font-size: 12px; line-height: 1.7; }
+    .credentials li > span:first-child { font: 9px var(--mono); color: var(--slate-300); text-transform: uppercase; letter-spacing: .7px; }
+    .credentials small { color: var(--slate-300); font-size: 11px; }
+    .profile-download { margin-top: 25px; border: 0; border-bottom: 1px solid var(--slate-50); padding: 0 0 7px; background: transparent; gap: 35px; }
+    .about a:focus-visible { outline-color: var(--teal-400); }
+    .about-links { display: flex; gap: 26px; align-items: center; flex-wrap: wrap; }
+    .now { margin-top: 46px; padding-top: 31px; border-top: 1px solid #F8FAFC40; display: grid; grid-template-columns: .95fr 1.25fr; gap: 83px; }
+    .now .mono { color: var(--teal-400); margin: 0; }
+    .now p:last-child { margin: 0; font-size: 12px; line-height: 1.9; color: var(--slate-300); }
+    footer { padding-top: 27px; padding-bottom: 29px; }
+    .footer-main { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+    .footer-brand { font-size: 17px; font-weight: 400; letter-spacing: -.6px; }
+    .footer-thought { font-size: 11px; color: var(--muted); }
+    .back-top { display: flex; align-items: center; gap: 15px; font-size: 11px; text-decoration: none; }
+    .footer-fine { display: flex; justify-content: space-between; margin-top: 25px; border-top: 1px solid var(--line); padding-top: 17px; color: var(--muted); font: 9px/1.7 var(--mono); gap: 24px; }
+    .palette-mark { display: flex; gap: 3px; margin-top: 19px; }
+    .palette-mark span { display: block; height: 3px; width: 28px; background: var(--sky-500); }
+    .palette-mark span:nth-child(2) { background: var(--teal-400); }
+    .palette-mark span:nth-child(3) { background: var(--teal-700); }
+    .palette-mark span:nth-child(4) { background: var(--cyan-400); }
+    .palette-mark span:nth-child(5) { background: var(--teal-600); }
+    dialog { width: min(780px, calc(100% - 36px)); max-height: calc(100dvh - 48px); border: 1px solid var(--ink); background: var(--paper); color: var(--ink); padding: 0; box-shadow: 0 30px 100px #0F172B4D; }
+    dialog::backdrop { background: #0F172BCF; backdrop-filter: blur(5px); }
+    .dialog-top { position: sticky; top: 0; z-index: 2; display: flex; justify-content: space-between; align-items: center; background: var(--slate-900); color: var(--slate-50); border-bottom: 2px solid var(--teal-400); padding: 16px 27px; }
+    .dialog-top .mono { font-size: 9px; }
+    .close-button { width: 38px; height: 38px; border: 1px solid #F8FAFC80; background: transparent; color: var(--slate-50); font-size: 24px; line-height: 1; display: grid; place-items: center; }
+    .close-button:hover { background: #F8FAFC1A; }
+    .close-button:focus-visible { outline-color: var(--teal-400); }
+    .article-content { padding: 35px 53px 46px; }
+    .article-content .article-category { color: var(--ink); margin: 0 0 17px; font-size: 10px; }
+    .article-content h2 { font-size: 39px; line-height: 1.15; font-weight: 400; letter-spacing: -1.4px; margin: 0 0 27px; }
+    .article-content .lead { font-size: 18px; line-height: 1.65; margin: 0 0 30px; color: var(--ink); }
+    .article-content p, .article-content li { font-size: 15px; line-height: 1.85; color: var(--muted); }
+    .article-content h3 { font-size: 20px; font-weight: 400; margin: 30px 0 8px; letter-spacing: -.3px; }
+    .article-content ul { padding-left: 22px; }
+    .article-content li { padding-left: 4px; margin-bottom: 8px; }
+    .article-content blockquote { border-left: 3px solid var(--teal-700); margin: 28px 0; padding: 4px 0 4px 22px; font-family: var(--display); font-size: 23px; line-height: 1.5; }
+    .article-footer { margin-top: 35px; padding-top: 23px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+    .article-footer p { font-size: 11px; color: var(--muted); margin: 0; }
+    .share-note { background: var(--ink); border: 0; color: var(--slate-50); font-size: 11px; padding: 12px 16px; min-width: 130px; }
+    .share-fallback { width: 100%; padding: 12px; border: 1px solid var(--ink); background: var(--slate-50); color: var(--ink); font: 11px var(--mono); margin-top: 15px; }
+    body.modal-open { overflow: hidden; }
+    .no-js { padding: 15px 25px; background: #0F172B0D; font-size: 13px; line-height: 1.6; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+    .hero-animate { animation: arrive .7s ease-out both; }
+    .system { animation: arrive .85s ease-out .1s both; }
+    @keyframes signal { to { stroke-dashoffset: -112; } }
+    @keyframes arrive { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+    @media (min-width: 1500px) {
+      .wrap { max-width: 1440px; padding-left: 80px; padding-right: 80px; }
+      .hero-grid { gap: 83px; }
+      .hero h1 { font-size: 88px; }
+      .hero { padding-top: 78px; }
+      .hero-intro { font-size: 18px; }
+    }
+    @media (max-width: 1080px) {
+      .wrap { padding-left: 38px; padding-right: 38px; }
+      .hero-grid { gap: 32px; }
+      .hero h1 { font-size: 61px; letter-spacing: -3px; }
+      .hero-intro { font-size: 15px; }
+      .nav-note { display: none; }
+      .about-grid, .now { gap: 45px; }
+      .actions { gap: 18px; }
+      .button { padding: 15px 17px; gap: 19px; }
+      .section-heading h2 { font-size: 39px; }
+      .note-card h3 { font-size: 21px; }
+      .notes-grid { gap: 21px; }
+      .focus-list { gap: 16px; }
+      .focus-list span + span::before { margin-right: 16px; }
+      .work-item { grid-template-columns: 30px 1fr 1.2fr; gap: 22px; }
+      .work-footnote { margin-left: 52px; }
+    }
+    @media (max-width: 760px) {
+      .wrap { padding-left: 25px; padding-right: 25px; }
+      .nav { height: 75px; gap: 15px; }
+      .brand { font-size: 26px; gap: 10px; }
+      .brand-mark { width: 26px; height: 26px; font-size: 16px; }
+      .nav-right { gap: 21px; }
+      .nav-right > a { font-size: 11px; }
+      .nav-right > .nav-github { display: none; }
+      .hero { padding-top: 39px; padding-bottom: 16px; }
+      .hero-eyebrow { font-size: 9px; letter-spacing: .65px; margin-bottom: 24px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 36px; }
+      .hero h1 { font-size: clamp(52px, 10vw, 74px); letter-spacing: -2.8px; max-width: 590px; margin-bottom: 22px; }
+      .hero h1 em { letter-spacing: -2.6px; }
+      .hero-intro { font-size: 16px; max-width: 530px; }
+      .hero-caption { margin-top: 25px; }
+      .actions { margin-top: 27px; gap: 23px; }
+      .system { max-width: 530px; width: 100%; justify-self: center; box-shadow: 8px 8px 0 #00786F26; }
+      .system-art { max-height: 330px; }
+      .system-insight { min-height: 107px; }
+      .insight-copy { max-width: none; font-size: 12px; }
+      .insight-title { font-size: 13px; }
+      .layer-button { font-size: 11px; min-height: 39px; }
+      .hero-bottom { margin-top: 39px; padding: 24px 0 18px; gap: 15px; align-items: start; }
+      .hero-bottom > .mono { max-width: 90px; font-size: 8px; }
+      .focus-list { flex-direction: column; align-items: start; gap: 7px; font-size: 10px; }
+      .focus-list span + span::before { display: none; }
+      .scroll-cue { align-self: center; }
+      .section-heading { display: block; }
+      .section-heading h2 { font-size: 37px; }
+      .section-heading > p { margin-top: 18px; max-width: 370px; font-size: 13px; }
+      .section-label { font-size: 9px; margin-bottom: 19px; }
+      .work { padding-top: 43px; padding-bottom: 44px; }
+      .work-list { margin-top: 28px; }
+      .work-item { grid-template-columns: 25px 1fr; gap: 14px 15px; padding: 25px 0; }
+      .work-title h3 { font-size: 24px; max-width: 340px; }
+      .work-index { grid-row: 1 / 3; }
+      .work-detail { grid-column: 2; }
+      .work-detail p { font-size: 12px; }
+      .work-footnote { margin-left: 40px; font-size: 10px; }
+      .fieldnotes { padding-top: 43px; padding-bottom: 48px; }
+      .note-filters { margin-top: 25px; gap: 3px; }
+      .filter { font-size: 10px; padding: 8px 11px; }
+      .notes-grid { grid-template-columns: 1fr; gap: 30px; }
+      .note-card { display: grid; grid-template-columns: 150px 1fr; column-gap: 21px; position: relative; padding-bottom: 25px; border-bottom: 1px solid var(--line); }
+      .note-art { grid-row: 1 / 5; aspect-ratio: 1 / 1; align-self: start; min-height: 150px; }
+      .art-caption { display: none; }
+      .note-meta { margin-top: 1px; font-size: 8px; gap: 10px; flex-wrap: wrap; }
+      .note-card h3 { font-size: 21px; margin: 9px 0; line-height: 1.23; }
+      .note-card p { font-size: 11px; margin-bottom: 11px; line-height: 1.65; }
+      .note-read { border: 0; padding-top: 0; font-size: 10px; min-height: 32px; }
+      .filter-status { margin-top: 19px; }
+      .series-tags { gap: 7px 13px; font-size: 8px; }
+      .about { padding-top: 43px; padding-bottom: 45px; }
+      .about-grid { grid-template-columns: 1fr; gap: 27px; }
+      .about h2 { font-size: 41px; max-width: 400px; }
+      .about-note { max-width: 450px; margin-top: 18px; }
+      .about-name { margin-top: 20px; }
+      .principles { margin-top: 20px; }
+      .about-intro { font-size: 14px; line-height: 1.9; }
+      .credentials { margin-top: 24px; }
+      .credentials li { grid-template-columns: 96px 1fr; gap: 14px; }
+      .profile-download { margin-top: 23px; }
+      .now { margin-top: 30px; padding-top: 25px; grid-template-columns: 1fr; gap: 12px; }
+      .footer-main { flex-wrap: wrap; gap: 15px; }
+      .footer-brand { width: calc(100% - 110px); }
+      .footer-thought { order: 3; width: 100%; }
+      .footer-fine { font-size: 8px; margin-top: 21px; align-items: start; }
+      .footer-fine span:last-child { max-width: 175px; text-align: right; }
+      .article-content { padding: 29px 25px 32px; }
+      .article-content h2 { font-size: 32px; }
+      .article-content .lead { font-size: 17px; }
+      .dialog-top { padding: 13px 19px; }
+      .article-content p, .article-content li { font-size: 14px; }
+      .article-footer { align-items: start; }
+      .article-footer p { max-width: 150px; font-size: 10px; }
+    }
+    @media (max-width: 420px) {
+      .wrap { padding-left: 21px; padding-right: 21px; }
+      .nav-right { gap: 15px; }
+      .nav-right > a { font-size: 10px; }
+      .hero h1 { font-size: 52px; }
+      .hero-intro { font-size: 15px; }
+      .hero-eyebrow { font-size: 8px; }
+      .actions { gap: 19px; }
+      .text-link { font-size: 11px; }
+      .button { font-size: 11px; gap: 16px; padding: 15px; }
+      .note-card { grid-template-columns: 112px 1fr; column-gap: 17px; }
+      .note-art { min-height: 128px; aspect-ratio: auto; height: 100%; }
+      .note-art svg { width: 190%; max-width: none; }
+      .note-meta { font-size: 7px; }
+      .note-card h3 { font-size: 20px; }
+      .note-meta span:last-child { display: none; }
+      .section-heading h2 { font-size: 34px; }
+      .system-insight { padding: 18px 20px; }
+      .system-top { padding: 19px 20px 0; }
+      .system-controls { padding-left: 20px; padding-right: 20px; gap: 6px; }
+      .layer-button { font-size: 9px; }
+      .system-top .mono { font-size: 8px; }
+      .article-footer { flex-direction: column; }
+      .article-footer p { max-width: none; }
+      .article-content { padding-left: 22px; padding-right: 22px; }
+      .article-content h2 { font-size: 29px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+    }
+    @media print {
+      header, .actions, .hero-caption, .hero-bottom, .note-filters, .filter-status, .note-read, .profile-download, .back-top, dialog { display: none !important; }
+      .wrap { max-width: none; padding: 0; }
+      .hero { padding-top: 0; }
+      .hero h1 { font-size: 48px; }
+      .hero-grid { gap: 30px; }
+      .hero-intro { font-size: 12px; }
+      .system { box-shadow: none; print-color-adjust: exact; }
+      .work, .fieldnotes { padding: 27px 0; }
+      .work-item { break-inside: avoid; }
+      .work-item h3 { font-size: 18px; }
+      .work-detail p { font-size: 11px; }
+      .notes-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
+      .note-card { display: flex; break-inside: avoid; border: 0; }
+      .note-card[hidden] { display: flex; }
+      .note-card h3 { font-size: 18px; }
+      .note-art { max-height: 100px; }
+      .about { print-color-adjust: exact; padding: 30px 0; }
+      .about-grid, .now { gap: 30px; }
+      .about h2 { font-size: 32px; }
+      .about-note, .about-intro { font-size: 11px; }
+      .credentials li { padding: 8px 0; }
+      .footer-fine { font-size: 8px; }
+    }
+
+    /* Arbutus Slab is the user's default family and has only a regular weight. */
+    html { font-synthesis: none; }
+    body, button, input { font-weight: 400; }
+    em, strong { font-style: normal; font-weight: 400; }
+    .text-emphasis { color: var(--ink); }
+    .brand { font-size: 28px; letter-spacing: -1px; }
+    .brand-mark { font-family: var(--display); }
+    .mono { font-size: 11px; line-height: 1.7; letter-spacing: .35px; }
+    .nav-right > a { font-size: 14px; }
+    .nav-note { font-size: 10px; letter-spacing: 0; }
+    .hero-eyebrow { font-size: 11px; letter-spacing: .25px; }
+    .hero h1 { font-size: clamp(52px, 5.1vw, 72px); letter-spacing: -1.8px; line-height: 1.17; }
+    .hero h1 em { letter-spacing: -1.8px; }
+    .hero-intro { font-size: 17px; line-height: 1.8; }
+    .button, .text-link { font-size: 14px; }
+    .hero-caption, .focus-list { font-size: 12px; line-height: 1.7; }
+    .hero-bottom > .mono { font-size: 10px; }
+    .focus-list { gap: 15px; }
+    .focus-list span + span::before { margin-right: 15px; }
+    .system-top .mono { font-size: 10px; letter-spacing: .15px; }
+    .system-art text { letter-spacing: .8px; }
+    .system-art .fine { font-size: 9px; letter-spacing: .3px; }
+    .layer-button { font-size: 11px; padding: 11px 8px; }
+    .system-insight { min-height: 144px; }
+    .insight-title { font-size: 14px; line-height: 1.65; }
+    .insight-copy { font-size: 13px; line-height: 1.75; }
+    .insight-index { font-size: 11px; }
+    .section-heading h2, .about h2 { font-size: 40px; letter-spacing: -1px; line-height: 1.25; }
+    .section-heading > p { font-size: 16px; line-height: 1.8; max-width: 330px; }
+    .work-title h3 { font-size: 24px; letter-spacing: -.4px; line-height: 1.4; }
+    .work-status { font-size: 11px; letter-spacing: 0; line-height: 1.8; }
+    .work-detail p { font-size: 16px; line-height: 1.8; }
+    .stack li { font-size: 11px; line-height: 1.65; padding: 5px 9px; }
+    .work-footnote { font-size: 13px; }
+    .note-meta { font-size: 10px; line-height: 1.6; letter-spacing: .1px; }
+    .note-meta span:last-child { white-space: nowrap; }
+    .note-card h3 { font-size: 23px; line-height: 1.5; letter-spacing: -.5px; }
+    .note-card p { font-size: 16px; line-height: 1.8; }
+    .note-read { font-size: 13px; line-height: 1.8; }
+    .filter { font-size: 13px; min-height: 42px; }
+    .filter-status, .series-note { font-size: 13px; line-height: 1.8; }
+    .series-tags { font-size: 11px; }
+    .art-caption { font-size: 10px; letter-spacing: .3px; }
+    .about-intro { font-size: 16px; line-height: 1.85; }
+    .about-intro .text-emphasis { color: var(--slate-50); }
+    .about-note { font-size: 16px; line-height: 1.8; }
+    .about-name { font-size: 12px; }
+    .principles span { font-size: 11px; line-height: 1.7; }
+    .credentials li { font-size: 15px; grid-template-columns: 105px 1fr; }
+    .credentials li > span:first-child { font-size: 11px; line-height: 1.6; letter-spacing: 0; }
+    .credentials small { font-size: 13px; }
+    .now p:last-child { font-size: 16px; line-height: 1.8; }
+    .about-links { gap: 7px 26px; }
+    .footer-thought { font-size: 13px; line-height: 1.7; }
+    .back-top { font-size: 12px; }
+    .footer-fine { font-size: 10px; }
+    .article-content h2 { font-size: 34px; line-height: 1.35; letter-spacing: -.7px; }
+    .article-content p, .article-content li { font-size: 17px; line-height: 1.8; }
+    .article-content .lead { font-size: 19px; line-height: 1.75; }
+    .article-content h3 { font-size: 22px; line-height: 1.5; }
+    .article-content blockquote { font-size: 24px; line-height: 1.65; }
+    .article-content .article-category { font-size: 11px; }
+    .article-footer p, .share-note { font-size: 12px; }
+    .dialog-top .mono { font-size: 11px; }
+    .menu-toggle { display: none; border: 1px solid var(--slate-900); background: transparent; padding: 10px 14px; font-size: 14px; min-height: 44px; gap: 16px; align-items: center; }
+    .menu-toggle span { font-size: 21px; line-height: 1; }
+    .connect-strip { display: flex; justify-content: space-between; align-items: center; gap: 30px; padding: 48px 0; border-bottom: 1px solid var(--line); margin-bottom: 29px; }
+    .connect-strip h2 { font-size: 28px; font-weight: 400; line-height: 1.45; margin: 0 0 8px; letter-spacing: -.5px; }
+    .connect-strip p { font-size: 14px; line-height: 1.8; color: var(--muted); margin: 0; max-width: 620px; }
+    .connect-strip .button { flex-shrink: 0; }
+    @media (min-width: 1500px) {
+      .hero h1 { font-size: 78px; }
+    }
+    @media (max-width: 1080px) {
+      .hero h1 { font-size: 56px; }
+      .hero-grid { gap: 28px; }
+      .section-heading h2, .about h2 { font-size: 35px; }
+      .nav-right { gap: 23px; }
+      .note-meta { flex-wrap: wrap; gap: 6px; }
+    }
+    @media (max-width: 760px) {
+      .hero h1 { font-size: 56px; letter-spacing: -1.2px; }
+      .hero h1 em { letter-spacing: -1.2px; }
+      .hero-eyebrow { font-size: 10px; }
+      .hero-intro { font-size: 17px; }
+      .js .menu-toggle { display: inline-flex; }
+      .js .nav-right { display: none; position: absolute; top: 79px; left: 21px; right: 21px; padding: 17px 23px; background: var(--slate-50); border: 1px solid var(--slate-900); box-shadow: 0 12px 24px #0F172B1A; flex-direction: column; align-items: stretch; gap: 4px; }
+      .js .nav-right.is-open { display: flex; }
+      .js .nav-right > a { font-size: 16px; padding: 12px 0; }
+      .js .nav-right > .nav-github { display: flex; justify-content: space-between; padding: 12px 0; border: 0; }
+      .js .nav-note { display: none; }
+      html:not(.js) .nav { height: auto; flex-wrap: wrap; padding-top: 20px; padding-bottom: 20px; }
+      html:not(.js) .nav-right { flex-wrap: wrap; }
+      .system-top .mono { font-size: 10px; }
+      .layer-button { font-size: 11px; }
+      .system-insight { min-height: 128px; }
+      .insight-title { font-size: 14px; }
+      .insight-copy { font-size: 13px; }
+      .hero-bottom { align-items: center; }
+      .hero-bottom > .mono { font-size: 10px; }
+      .focus-list { font-size: 11px; }
+      .section-heading h2, .about h2 { font-size: 34px; }
+      .section-heading > p { font-size: 16px; }
+      .section-label { font-size: 11px; }
+      .work-detail p, .work-footnote { font-size: 16px; }
+      .work-footnote { margin-left: 0; }
+      .work-title h3 { font-size: 25px; }
+      .note-card { display: flex; padding-bottom: 28px; }
+      .note-art { width: 100%; aspect-ratio: 2 / 1; min-height: 0; max-height: 220px; height: auto; margin-bottom: 22px; }
+      .note-art svg { width: 100%; max-width: 100%; }
+      .note-meta { font-size: 11px; justify-content: space-between; gap: 12px; }
+      .note-meta span:last-child { display: inline; }
+      .note-card h3 { font-size: 25px; line-height: 1.5; margin: 14px 0 10px; }
+      .note-card p { font-size: 16px; line-height: 1.8; margin-bottom: 15px; }
+      .note-read { font-size: 13px; }
+      .filter { font-size: 12px; }
+      .series-tags { font-size: 10px; }
+      .credentials li { font-size: 14px; grid-template-columns: 91px 1fr; }
+      .credentials small { font-size: 12px; }
+      .about-intro, .about-note, .now p:last-child { font-size: 16px; }
+      .profile-download { font-size: 13px; }
+      .connect-strip { flex-direction: column; align-items: flex-start; padding: 30px 0 35px; gap: 24px; }
+      .connect-strip h2 { font-size: 25px; }
+      .connect-strip p { font-size: 16px; }
+      .footer-thought { font-size: 13px; }
+      .footer-fine { font-size: 9px; }
+      .article-content h2 { font-size: 30px; }
+      .article-content p, .article-content li { font-size: 16px; }
+      .article-content .lead { font-size: 18px; }
+      .article-footer p { font-size: 12px; }
+    }
+    @media (max-width: 420px) {
+      .hero h1 { font-size: 45px; letter-spacing: -1px; }
+      .hero h1 em { letter-spacing: -1px; }
+      .hero-eyebrow { font-size: 9px; }
+      .hero .button, .hero .text-link { font-size: 13px; }
+      .actions { gap: 22px; }
+      .layer-button { font-size: 10px; }
+      .system-top .mono { font-size: 9px; }
+      .section-heading h2, .about h2 { font-size: 29px; }
+      .work-item { grid-template-columns: 20px 1fr; gap: 14px 12px; }
+      .work-title h3 { font-size: 23px; }
+      .credentials li { grid-template-columns: 1fr; gap: 6px; }
+      .article-content h2 { font-size: 27px; }
+      .article-content blockquote { font-size: 21px; }
+    }
+    @media print {
+      .menu-toggle, .connect-strip, .nav-right { display: none !important; }
+      .hero h1 { font-size: 44px; }
+      .work-detail p, .about-intro, .about-note, .note-card p { font-size: 11px; }
+      .note-card h3 { font-size: 17px; }
+      .credentials li { font-size: 11px; }
+      .credentials small { font-size: 10px; }
+      .now p:last-child { font-size: 11px; }
+    }
+
+    .experience { border-top: 1px solid var(--line); padding-top: 64px; padding-bottom: 70px; }
+    .career-list { border-top: 1px solid var(--line); margin-top: 37px; }
+    .career-item { display: grid; grid-template-columns: 240px 1fr; gap: 40px; padding: 27px 0; border-bottom: 1px solid var(--line); }
+    .career-date { font-size: 13px; line-height: 1.9; margin: 0; color: var(--ink); }
+    .career-date span { color: var(--muted); font-size: 12px; }
+    .career-item h3 { font-size: 21px; line-height: 1.5; font-weight: 400; margin: 0 0 5px; }
+    .career-item .career-company { color: var(--teal-700); font-size: 15px; margin: 0 0 10px; }
+    .career-item p:last-child { color: var(--muted); font-size: 16px; line-height: 1.8; margin: 0; max-width: 770px; }
+    .identity { display: flex; gap: 18px; align-items: center; margin-bottom: 27px; }
+    .identity img { object-fit: cover; border: 1px solid #F8FAFC80; flex-shrink: 0; }
+    .identity .about-name { margin: 0; font-size: 12px; line-height: 1.9; }
+    .writing-links { display: flex; flex-wrap: wrap; gap: 14px 25px; margin: 23px 0 0; font-size: 14px; line-height: 1.8; }
+    .writing-links a { text-underline-offset: 5px; text-decoration-thickness: 1px; }
+    .connect-strip p a { color: var(--ink); text-underline-offset: 4px; }
+    @media (max-width: 1080px) { .career-item { grid-template-columns: 210px 1fr; gap: 30px; } .nav-right { gap: 20px; } }
+    @media (max-width: 760px) { .experience { padding-top: 43px; padding-bottom: 45px; } .career-item { grid-template-columns: 1fr; gap: 13px; padding: 25px 0; } .career-date { font-size: 12px; } .career-date br { display: none; } .career-date span::before { content: ' / '; } .career-item h3 { font-size: 21px; } .identity { gap: 15px; } .identity .about-name { font-size: 11px; } }
+    @media print { .experience { padding: 27px 0; } .career-item { grid-template-columns: 175px 1fr; gap: 20px; padding: 12px 0; break-inside: avoid; } .career-item h3 { font-size: 13px; } .career-item p:last-child, .career-item .career-company, .career-date, .career-date span { font-size: 10px; } .writing-links, .identity { display: none; } }
+
+    .skills-summary { margin-top: 30px; padding-top: 24px; border-top: 1px solid var(--line); }
+    .skills-summary h3 { font-size: 16px; font-weight: 400; margin: 0 0 14px; }
+    .skills-summary ul { display: flex; flex-wrap: wrap; list-style: none; gap: 8px; margin: 0; padding: 0; }
+    .skills-summary li { font-size: 12px; line-height: 1.7; padding: 7px 11px; border: 1px solid var(--line); }
+    .note-read { text-decoration: none; }
+    .note-read:hover { text-decoration: underline; text-underline-offset: 4px; }
+    @media (max-width: 760px) { .skills-summary li { font-size: 12px; } }
+  </style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Person", "@id": "https://nagarjunr.github.io/portfolio/#person", "name": "Nagarjun Rajendran", "alternateName": "Arjun", "url": "https://nagarjunr.github.io/portfolio/", "image": "https://nagarjunr.github.io/portfolio/assets/avatar.jpeg", "email": "nagarjunrajen@gmail.com", "jobTitle": "Cloud and Technology Solutions Manager, Expert", "worksFor": {"@type": "Organization", "name": "Robert Bosch LLC"}, "description": "Cloud and technology solutions professional with 15 years of experience across software applications, embedded systems, IoT, and cloud architecture. Focused on practical GenAI, technical leadership, and clear decisions for delivery teams.", "knowsAbout": ["IoT solution architecture", "Cloud solution architecture", "Amazon Web Services (AWS)", "Microsoft Azure", "Generative AI (GenAI)", "System design", "Integration architecture", "Technical product ownership", "Technical leadership", "Embedded systems", "Python", "C and C++", "Infrastructure as code", "Customer discovery"], "sameAs": ["https://www.linkedin.com/in/nagarjunr/", "https://github.com/nagarjunr", "https://medium.com/@nagarjunr", "https://nagarjun.beehiiv.com"], "alumniOf": [{"@type": "CollegeOrUniversity", "name": "National University of Singapore"}, {"@type": "CollegeOrUniversity", "name": "Anna University, India"}], "memberOf": {"@type": "Organization", "name": "IEEE"}}, {"@type": "ProfilePage", "@id": "https://nagarjunr.github.io/portfolio/#profile", "url": "https://nagarjunr.github.io/portfolio/", "name": "Nagarjun Rajendran | IoT Cloud Architecture, GenAI and Technical Leadership", "dateModified": "2026-11-22", "mainEntity": {"@id": "https://nagarjunr.github.io/portfolio/#person"}, "inLanguage": "en", "hasPart": [{"@type": "DigitalDocument", "name": "Public professional profile", "encodingFormat": "application/pdf", "url": "https://nagarjunr.github.io/portfolio/assets/nagarjun-rajendran-profile.pdf"}, {"@type": "DigitalDocument", "name": "Plain text professional profile", "encodingFormat": "text/plain", "url": "https://nagarjunr.github.io/portfolio/assets/nagarjun-rajendran-profile.txt"}]}, {"@type": "WebSite", "@id": "https://nagarjunr.github.io/portfolio/#website", "url": "https://nagarjunr.github.io/portfolio/", "name": "Arjun. Connected systems. Clear thinking.", "author": {"@id": "https://nagarjunr.github.io/portfolio/#person"}, "inLanguage": "en"}]}</script>
+</head>
+<body id="top">
+  <a class="skip" href="#main">Skip to content</a>
+  <header>
+    <div class="nav wrap">
+      <a class="brand" href="#top" aria-label="Arjun, home"><span class="brand-mark" aria-hidden="true">/\</span><span>arjun<span class="brand-dot">.</span></span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu <span aria-hidden="true">+</span></button><nav class="nav-right" id="site-nav" aria-label="Main navigation">
+        <a href="#work">Work</a><a href="#experience">Experience</a><a href="#fieldnotes">Fieldnotes</a><a href="#about">About</a><a class="nav-github" href="https://www.linkedin.com/in/nagarjunr/" target="_blank" rel="noopener noreferrer">Connect <span aria-hidden="true">↗</span><span class="sr-only"> on LinkedIn, opens in a new tab</span></a>
+        <span class="nav-note mono"><span class="pin" aria-hidden="true"></span>Chicago area, US</span>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <div class="hero-eyebrow mono">Nagarjun Rajendran / IoT Cloud Solutions Architecture</div>
+      <div class="hero-grid">
+        <div class="hero-animate">
+          <h1 id="hero-title">Connected<br>systems.<br><em>Clear thinking.</em></h1>
+          <p class="hero-intro">I am Arjun. My core is <strong class="text-emphasis">IoT Cloud Solutions Architecture.</strong> I bring 15 years of experience across software, embedded systems, and cloud platforms to the practical questions behind a connected system.</p>
+          <div class="actions"><a class="button" href="#work">Explore my work <span class="arrow" aria-hidden="true">↗</span></a><a class="text-link" href="#fieldnotes">Read the fieldnotes <span aria-hidden="true">→</span></a></div>
+          <p class="hero-caption">An architect by practice. A learner by habit.</p>
+        </div>
+        <div class="system" aria-label="An interactive view of connected systems">
+          <div class="system-top"><span class="mono">A systems perspective</span><span class="system-live mono">Choose a layer</span></div>
+          <svg class="system-art" viewBox="0 0 480 324" role="img" aria-labelledby="system-title system-desc">
+            <title id="system-title">From the physical world to useful decisions</title><desc id="system-desc">A conceptual system with connected devices, a cloud platform, and applied AI. Choose a layer below to read an architecture principle.</desc>
+            <defs><pattern id="grid" width="27" height="27" patternUnits="userSpaceOnUse" patternTransform="matrix(1 .36 -1 .36 240 0)"><path d="M27 0H0V27" class="gridline" fill="none"/></pattern></defs>
+            <rect x="0" y="0" width="480" height="324" fill="url(#grid)"/>
+            <path d="M68 255 240 317 414 254M68 255V126M414 254V126" fill="none" stroke="#F8FAFC" stroke-opacity=".15"/>
+            <path class="route" d="M125 233V142L240 100 355 142V233L240 275 125 233M240 100V275M125 142 355 233M355 142 125 233"/>
+            <path class="route-active" d="M125 219V150L240 108 355 150V219L240 261 125 219"/>
+            <g class="layer" data-art-layer="ai">
+              <path d="m140 92 100-36 100 36v22l-100 36-100-36z" fill="#1D293D" stroke="#00A6F4" stroke-width="1"/>
+              <path class="active-surface" d="m140 92 100-36 100 36-100 36z" fill="#1D293D" stroke="#00D5BE" stroke-width="1"/>
+              <path d="M240 128v22M140 92l100 36 100-36" fill="none" stroke="#00D5BE" stroke-width="1"/>
+              <text class="layer-title" x="240" y="98" fill="#F8FAFC" text-anchor="middle">APPLIED AI</text>
+              <path d="M349 94h30l14-11" fill="none" stroke="#F8FAFC80" stroke-width=".7"/><text class="fine" x="397" y="82">03</text>
+            </g>
+            <g class="layer" data-art-layer="cloud">
+              <path d="m119 160 121-44 121 44v28l-121 44-121-44z" fill="#1D293D" stroke="#00786F" stroke-width="1"/>
+              <path class="active-surface" d="m119 160 121-44 121 44-121 44z" fill="#1D293D" stroke="#00A6F4" stroke-width="1"/>
+              <path d="M240 204v28M119 160l121 44 121-44" fill="none" stroke="#00A6F4" stroke-width="1"/>
+              <text class="layer-title" x="240" y="166" fill="#F8FAFC" text-anchor="middle">CLOUD PLATFORM</text>
+              <path d="M371 167h18l13-10" fill="none" stroke="#F8FAFC80" stroke-width=".7"/><text class="fine" x="406" y="157">02</text>
+            </g>
+            <g class="layer is-active" data-art-layer="edge">
+              <path d="m99 231 141-51 141 51v20l-141 51-141-51z" fill="#1D293D" stroke="#009689" stroke-width="1"/>
+              <path class="active-surface" d="m99 231 141-51 141 51-141 51z" fill="#00D5BE" stroke="#00D5BE" stroke-width="1"/>
+              <path d="M240 282v20M99 231l141 51 141-51" fill="none" stroke="#00A6F4" stroke-width="1"/>
+              <text class="layer-title" x="240" y="238" fill="#0F172B" text-anchor="middle">DEVICE &amp; EDGE</text>
+              <path d="M88 233H62l-12-11" fill="none" stroke="#F8FAFC80" stroke-width=".7"/><text class="fine" x="28" y="221">01</text>
+            </g>
+            <g class="device-icon"><path d="m59 147 13-5 13 5v21l-13 5-13-5zm0 0 13 5 13-5m-13 5v21M393 209l11-4 11 4v18l-11 4-11-4zm0 0 11 4 11-4m-11 4v18"/><path d="M65 134q7-8 14 0m-18-5q11-12 22 0M397 197q7-8 14 0" opacity=".65"/></g>
+            <text class="fine" x="20" y="305">PHYSICAL WORLD → USEFUL DECISIONS</text>
+          </svg>
+          <div class="system-controls" aria-label="Choose an architecture layer">
+            <button class="layer-button" data-layer="edge" aria-pressed="true" aria-controls="system-insight">01 / Edge</button><button class="layer-button" data-layer="cloud" aria-pressed="false" aria-controls="system-insight">02 / Cloud</button><button class="layer-button" data-layer="ai" aria-pressed="false" aria-controls="system-insight">03 / Applied AI</button>
+          </div>
+          <div class="system-insight" id="system-insight" aria-live="polite" aria-atomic="true"><span class="insight-index">01</span><div><h2 class="insight-title">Start where the data starts.</h2><p class="insight-copy">Connections fail. Devices drift. Good architecture starts with the physical world and its constraints.</p></div></div>
+        </div>
+      </div>
+      <div class="hero-bottom"><span class="mono">One connected perspective</span><div class="focus-list"><span>Understand the problem</span><span>Make the tradeoffs clear</span><span>Build for the real world</span></div><a href="#work" class="scroll-cue" aria-label="Scroll to work">↓</a></div>
+    </section>
+    <section class="work wrap" id="work" aria-labelledby="work-title">
+      <p class="section-label mono"><span>01</span> / Work &amp; exploration</p>
+      <div class="section-heading"><h2 id="work-title">From first principles<br><em>to practical systems.</em></h2><p>Hands-on learning, product thinking, and ideas worth testing. Each starts with a real question.</p></div>
+      <div class="work-list">
+        <article class="work-item">
+          <span class="work-index" aria-hidden="true">01</span><div class="work-title"><h3>Cloud platforms.<br>Connected mobility.</h3><span class="work-status">Architecture &amp; technical product ownership</span></div>
+          <div class="work-detail"><p>Cloud solution architecture, partner integrations, and technical product ownership in mobility and logistics. My work connects solution design with delivery teams and business needs, including leading a regional five-person solutions team as Technical Product Owner.</p><ul class="stack" aria-label="Areas of work"><li>AWS</li><li>Azure</li><li>Integration architecture</li><li>Technical product ownership</li></ul></div>
+        </article>
+        <article class="work-item">
+          <span class="work-index" aria-hidden="true">02</span><div class="work-title"><h3>Connected e-scooters.<br>Architecture beyond the device.</h3><span class="work-status">Azure IoT solution architecture</span></div>
+          <div class="work-detail"><p>Architected an Azure-based connected e-scooter solution designed to support up to 100,000 devices. My role brought together IoT and cloud design, reliability, security considerations, and support for the delivery team.</p><ul class="stack" aria-label="Areas of work"><li>Azure IoT</li><li>Device connectivity</li><li>Security architecture</li><li>Performance testing</li></ul></div>
+        </article>
+        <article class="work-item">
+          <span class="work-index" aria-hidden="true">03</span><div class="work-title"><h3>AquaEasy.<br>From a hypothesis to an IoT product.</h3><span class="work-status">Co-founder / Bosch intrapreneurship</span></div>
+          <div class="work-detail"><p>Co-founded AquaEasy within Bosch’s intrapreneurship programme as part of a three-person founding team. I worked on customer discovery and product validation, led IoT gateway firmware architecture and development, and helped demonstrate the working product.</p><ul class="stack" aria-label="Areas of work"><li>IoT gateway design</li><li>Product validation</li><li>Customer discovery</li><li>Intrapreneurship</li></ul></div>
+        </article>
+        <article class="work-item">
+          <span class="work-index" aria-hidden="true">04</span><div class="work-title"><h3>A personal AI twin.<br>A conversation as an interface.</h3><span class="work-status concept">Personal prototype</span></div>
+          <div class="work-detail"><p>A personal prototype pairing a Next.js chat interface with a Python backend and infrastructure-as-code deployment configuration. It explores how a conversational interface can present professional context while keeping the interface, API, and deployment concerns separate.</p><ul class="stack" aria-label="Technologies"><li>Next.js</li><li>Python</li><li>Generative AI</li><li>Infrastructure as code</li></ul></div>
+        </article>
+        <article class="work-item">
+          <span class="work-index" aria-hidden="true">05</span><div class="work-title"><h3>A Raspberry Pi.<br>An end-to-end IoT journey.</h3><span class="work-status">Personal project &amp; article / 2020</span></div>
+          <div class="work-detail"><p>A hands-on learning project connecting a Raspberry Pi and GrovePi with Django, MongoDB, and Azure. I used it to explain the IoT journey in a beginner-friendly Medium article, from collecting data to making it useful in a web application.</p><ul class="stack" aria-label="Technologies"><li>Raspberry Pi</li><li>GrovePi</li><li>Django</li><li>MongoDB</li><li>Azure</li></ul></div>
+        </article>
+      </div>
+      <p class="work-footnote">My work spans architecture, hands-on engineering, product thinking, and technical leadership, with a focus on helping teams make clear decisions and deliver useful systems.</p>
+    </section>
+    <section class="experience wrap" id="experience" aria-labelledby="experience-title">
+      <p class="section-label mono"><span>02</span> / Professional journey</p>
+      <div class="section-heading"><h2 id="experience-title">From firmware<br><em>to the cloud.</em></h2><p>The thread through my work has stayed consistent: understand the system, connect the parts, and make it easier for people to build.</p></div>
+      <div class="skills-summary"><h3>Core skills</h3><ul><li>IoT solution architecture</li><li>Cloud solution architecture</li><li>Amazon Web Services (AWS)</li><li>Microsoft Azure</li><li>Generative AI (GenAI)</li><li>System design</li><li>Integration architecture</li><li>Technical product ownership</li><li>Technical leadership</li><li>Embedded systems</li><li>Python</li><li>C and C++</li><li>Infrastructure as code</li><li>Customer discovery</li></ul></div>
+      <div class="career-list">
+        <article class="career-item"><p class="career-date">Jan 2023 to present<br><span>Illinois, United States</span></p><div><h3>Cloud and Technology Solutions Manager, Expert</h3><p class="career-company">Robert Bosch LLC</p><p>Cloud and IoT solution architecture, emerging technology exploration, customer consultation, and technical product ownership. Led a regional five-person solutions team as Technical Product Owner.</p></div></article>
+        <article class="career-item"><p class="career-date">Aug 2017 to Dec 2022<br><span>Singapore</span></p><div><h3>Senior IoT Solutions Architect and Technical Lead</h3><p class="career-company">Robert Bosch South East Asia</p><p>End-to-end IoT and cloud solution architecture, technical leadership, and intrapreneurship. Guided around 20 engineers on a logistics platform and co-founded AquaEasy within Bosch’s intrapreneurship programme.</p></div></article>
+        <article class="career-item"><p class="career-date">Sep 2015 to Aug 2017<br><span>Singapore</span></p><div><h3>Software Engineer</h3><p class="career-company">Continental Automotive</p><p>Automotive embedded software, control interfaces, unit testing frameworks, and test automation using C, C++, and Python. One automation reduced a test workflow from five hours to 20 minutes.</p></div></article>
+        <article class="career-item"><p class="career-date">May 2014 to Aug 2015<br><span>Singapore</span></p><div><h3>Embedded Software Architect</h3><p class="career-company">Pirate3D</p><p>3D printer firmware, processor-to-controller communication, motion modelling, and over-the-air firmware updates.</p></div></article>
+        <article class="career-item"><p class="career-date">Jul 2013 to Dec 2013<br><span>Singapore</span></p><div><h3>Digital IC Design Intern</h3><p class="career-company">Broadcom</p><p>Automation for integrated circuit verification workflows, regression tests, and engineering reports.</p></div></article>
+        <article class="career-item"><p class="career-date">Nov 2011 to Jun 2012<br><span>Chennai, India</span></p><div><h3>Assistant Systems Engineer, Trainee</h3><p class="career-company">Tata Consultancy Services</p><p>Banking application development using COBOL, DB2, and SQL, with module analysis, development, and documentation responsibilities.</p></div></article>
+      </div>
+    </section>
+    <section class="fieldnotes wrap" id="fieldnotes" aria-labelledby="notes-title">
+      <p class="section-label mono"><span>03</span> / Fieldnotes</p>
+      <div class="section-heading"><h2 id="notes-title">Less noise.<br><em>More useful questions.</em></h2><p>Short notes on the decisions behind the diagrams. Written for people who build, explain, and lead.</p></div>
+      <div class="note-filters" aria-label="Filter fieldnotes by topic"><button class="filter" data-filter="all" aria-pressed="true">All fieldnotes <span aria-hidden="true">(3)</span></button><button class="filter" data-filter="architecture" aria-pressed="false">Architecture</button><button class="filter" data-filter="ai" aria-pressed="false">Applied AI</button><button class="filter" data-filter="leadership" aria-pressed="false">Leadership</button></div>
+      <div class="notes-grid">
+        <article class="note-card" data-category="architecture">
+          <div class="note-art" aria-hidden="true"><svg viewBox="0 0 360 215" preserveAspectRatio="xMidYMid slice"><rect width="360" height="215" fill="#DFF2FE"/><g fill="none" stroke="#00786F80" stroke-width=".8"><path d="m-30 98 210-76 210 76-210 76zM-30 123l210-76 210 76-210 76zM-30 148l210-76 210 76-210 76z"/><path d="M-30 98v50m210 26v50M390 98v50"/></g><path d="m100 93 80-29 80 29v45l-80 29-80-29z" fill="#F8FAFC" stroke="#00786F"/><path d="m100 93 80 29 80-29m-80 29v45" fill="none" stroke="#00786F"/><path d="m137 80 43 15 43-15m-43 15v27" fill="none" stroke="#00786F" stroke-dasharray="3 3"/><circle cx="180" cy="95" r="5" fill="#009689"/><path d="M180 60V37m-5 5 5-5 5 5" fill="none" stroke="#009689"/><circle cx="78" cy="151" r="3" fill="#00786F"/><circle cx="283" cy="151" r="3" fill="#00786F"/></svg><span class="art-caption">01 / Beyond the happy path</span></div>
+          <div class="note-meta"><span>Architecture in Practice</span><span>2 min read</span></div><h3>Design for the day the connection fails.</h3><p>An IoT system reveals its architecture when the network stops cooperating.</p><a class="note-read" href="fieldnotes/connection.html" data-note="connection" aria-haspopup="dialog">Read fieldnote <span class="arrow" aria-hidden="true">↗</span><span class="sr-only">: Design for the day the connection fails</span></a>
+        </article>
+        <article class="note-card" data-category="ai">
+          <div class="note-art" aria-hidden="true"><svg viewBox="0 0 360 215" preserveAspectRatio="xMidYMid slice"><rect width="360" height="215" fill="#ECFEFF"/><g fill="none" stroke="#00786F80" stroke-width=".8"><circle cx="180" cy="104" r="70"/><circle cx="180" cy="104" r="45"/><path d="M37 104h72m142 0h72M180 14v20m0 140v27"/><path d="m130 54 18 18m64 64 18 18m0-100-18 18m-64 64-18 18"/></g><rect x="151" y="75" width="58" height="58" rx="2" fill="#00786F" stroke="#0F172B"/><path d="M165 95h30m-30 9h21m-21 9h26" stroke="#F8FAFC" stroke-width="1.2"/><rect x="53" y="93" width="22" height="22" fill="#ECFEFF" stroke="#00786F"/><circle cx="296" cy="104" r="11" fill="#0F172B"/><path d="m291 104 4 4 7-8" fill="none" stroke="#F8FAFC" stroke-width="1.2"/><circle cx="180" cy="34" r="3" fill="#009689"/><circle cx="180" cy="174" r="3" fill="#009689"/></svg><span class="art-caption">02 / Intelligence with a purpose</span></div>
+          <div class="note-meta"><span>Emerging Tech Reality</span><span>2 min read</span></div><h3>Give AI a job before you give it a model.</h3><p>Start with the decision, the evidence, and what a useful answer would change.</p><a class="note-read" href="fieldnotes/ai-job.html" data-note="ai-job" aria-haspopup="dialog">Read fieldnote <span class="arrow" aria-hidden="true">↗</span><span class="sr-only">: Give AI a job before you give it a model</span></a>
+        </article>
+        <article class="note-card" data-category="leadership">
+          <div class="note-art" aria-hidden="true"><svg viewBox="0 0 360 215" preserveAspectRatio="xMidYMid slice"><rect width="360" height="215" fill="#F0FDFA"/><g fill="none" stroke="#00786F80" stroke-width="1"><path d="M65 160V72h230v88M123 160v-48h114v48M180 72v40"/><path d="M58 153l7 7 7-7m44 0 7 7 7-7m100 0 7 7 7-7m44 0 7 7 7-7"/></g><rect x="154" y="47" width="52" height="36" fill="#0F172B"/><path d="M169 65h22m-6-5 6 5-6 5" stroke="#F8FAFC" fill="none"/><g fill="#F0FDFA" stroke="#00786F"><circle cx="65" cy="171" r="11"/><circle cx="123" cy="171" r="11"/><circle cx="237" cy="171" r="11"/><circle cx="295" cy="171" r="11"/></g><circle cx="180" cy="112" r="5" fill="#009689"/><path d="M213 61h63m-5-5 5 5-5 5" stroke="#00786F" fill="none"/></svg><span class="art-caption">03 / Clarity creates ownership</span></div>
+          <div class="note-meta"><span>Technical Leadership</span><span>2 min read</span></div><h3>Clarity is part of the architecture.</h3><p>A system needs clear ownership just as much as it needs clear interfaces.</p><a class="note-read" href="fieldnotes/clarity.html" data-note="clarity" aria-haspopup="dialog">Read fieldnote <span class="arrow" aria-hidden="true">↗</span><span class="sr-only">: Clarity is part of the architecture</span></a>
+        </article>
+      </div>
+      <p class="filter-status" aria-live="polite" aria-atomic="true">Three perspectives. One systems mindset.</p>
+      <p class="series-note">New fieldnotes for this site, shaped around my three writing themes.</p>
+      <p class="writing-links"><a href="https://medium.com/@nagarjunr" target="_blank" rel="noopener noreferrer">Read on Medium <span aria-hidden="true">↗</span><span class="sr-only">, opens in a new tab</span></a><a href="https://nagarjun.beehiiv.com" target="_blank" rel="noopener noreferrer">Visit my newsletter <span aria-hidden="true">↗</span><span class="sr-only">, opens in a new tab</span></a></p><div class="series-tags" aria-label="Writing series"><span>#ArchitectureInPractice</span><span>#EmergingTechReality</span><span>#TechnicalLeadershipSeries</span></div>
+      <noscript><div class="no-js">The full fieldnotes and layer explorer use JavaScript. The profile below is available without it.</div></noscript>
+    </section>
+    <section class="about" id="about" aria-labelledby="about-title"><div class="wrap">
+      <p class="section-label mono"><span>04</span> / The person behind the diagrams</p>
+      <div class="about-grid"><div><div class="identity"><img src="assets/avatar.jpeg" width="84" height="84" alt="Nagarjun Rajendran" loading="lazy" decoding="async"><p class="about-name">Nagarjun Rajendran<br>Known as Arjun. Based in the Chicago area.</p></div><h2 id="about-title">Curious about<br>technology.<br><em>Grounded in practice.</em></h2><p class="about-note">My core is IoT Cloud Solutions Architecture. My wider interests are practical GenAI, technical leadership, and quantum technologies. I prefer clear explanations, visible tradeoffs, and ideas tested against real constraints.</p><div class="principles" aria-label="Guiding principles"><span>Clarity</span><span>Practicality</span><span>Continuous learning</span></div></div>
+        <div><p class="about-intro">I work with customers and teams to <strong class="text-emphasis">understand technical choices and build a path forward.</strong> I work at Robert Bosch LLC in Illinois as a Cloud and Technology Solutions Manager, Expert. My focus spans IoT and cloud architecture, GenAI use cases, customer education, technology consultation, and proofs of concept.</p><p class="about-intro">I care about the questions behind a solution: What problem matters? What will happen when something fails? Can the people who own it understand how it works? I see technical leadership as creating clarity, supporting experts, and helping others make sound decisions. I also enjoy sharing practical learning and offering peer guidance based on my own technology journey.</p><ul class="credentials"><li><span>Current role</span><span>Robert Bosch LLC<br><small>Cloud and Technology Solutions Manager, Expert</small></span></li><li><span>Master’s</span><span>National University of Singapore<br><small>Master of Science, Electrical and Computer Engineering<br>2012 to 2013</small></span></li><li><span>Bachelor’s</span><span>Anna University, India<br><small>Electronics and Communication Engineering<br>2007 to 2011</small></span></li><li><span>Executive education</span><span>UC Berkeley, Haas School of Business<br><small>Startup Acceleration Group, distance learning<br>2017 to 2018</small></span></li><li><span>Community</span><span>IEEE Senior Member</span></li></ul><div class="about-links"><a class="text-link profile-download" id="profile-download" href="assets/nagarjun-rajendran-profile.pdf" download="nagarjun-rajendran-profile.pdf">Download career profile <span aria-hidden="true">↓</span></a><a class="text-link profile-download" href="assets/nagarjun-rajendran-profile.txt" download="nagarjun-rajendran-profile.txt">Text profile <span aria-hidden="true">↓</span></a><a class="text-link profile-download" href="https://github.com/nagarjunr" target="_blank" rel="noopener noreferrer">Find me on GitHub <span aria-hidden="true">↗</span><span class="sr-only">, opens in a new tab</span></a><a class="text-link profile-download" href="https://www.linkedin.com/in/nagarjunr/" target="_blank" rel="noopener noreferrer">Connect on LinkedIn <span aria-hidden="true">↗</span><span class="sr-only">, opens in a new tab</span></a></div></div>
+      </div>
+      <div class="now"><p class="mono">Still learning. Always improving.</p><p>I am exploring quantum technologies alongside my core architecture work. A planned GenAI Energy Optimization Advisor using simulated IoT devices is another idea I would like to take further. I also keep returning to continuous improvement in cloud governance, delivery pipelines, and policy automation.</p></div>
+    </div></section>
+  </main>
+  <footer class="wrap"><div class="connect-strip"><div><h2>Good conversations build better systems.</h2><p>Connect with me to exchange architecture lessons, discuss technical ideas, or share a practical learning experience. You can also <a href="mailto:nagarjunrajen@gmail.com">email me</a>.</p></div><a class="button" href="https://www.linkedin.com/in/nagarjunr/" target="_blank" rel="noopener noreferrer">Connect on LinkedIn <span class="arrow" aria-hidden="true">↗</span><span class="sr-only">, opens in a new tab</span></a></div><div class="footer-main"><span class="footer-brand">arjun<span class="brand-dot">.</span></span><span class="footer-thought">Good systems start with better questions.</span><a class="back-top" href="#top">Back to top <span aria-hidden="true">↑</span></a></div><div class="footer-fine"><span>© <span id="year">2026</span> Nagarjun Rajendran</span><span>Personal perspectives. No employer endorsement.</span></div><div class="palette-mark" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div></footer>
+  <dialog id="note-dialog" aria-labelledby="article-title"><div class="dialog-top"><span class="mono">Arjun / Fieldnotes</span><button class="close-button" aria-label="Close fieldnote" autofocus>×</button></div><div class="article-content" id="article-content"></div></dialog>
+  <template id="note-connection"><p class="article-category mono">Architecture in practice / 2 min read</p><h2 id="article-title">Design for the day the connection fails.</h2><p class="lead">A sensor sends a reading. A gateway forwards it. A dashboard updates. The demo works. Now disconnect the gateway.</p><p>That small test opens a much more useful architecture conversation. What gets lost? What waits? And what does the person looking at the dashboard believe is happening?</p><h3>Start with the consequence.</h3><p>Before choosing a message broker or a database, ask what a missing reading means. An hourly environmental trend and a time-sensitive equipment alert need different treatment. The consequence of delay should shape the design.</p><p>For a simulated energy monitoring system, I would begin with three questions:</p><ul><li>Can the device keep collecting readings while the network is unavailable?</li><li>How long can it store them, and what happens when that space runs out?</li><li>How will the user distinguish a quiet building from a disconnected sensor?</li></ul><h3>Recovery is part of the design.</h3><p>Restoring the connection is only the beginning. Buffered readings can arrive late or more than once. A useful event needs enough context to explain where it came from and when the measurement happened.</p><p>The receiving system needs a deliberate policy for duplicates, old readings, and gaps. Those choices should follow the business question. A historical energy report and a live operational view may handle the same late event differently.</p><h3>Make uncertainty visible.</h3><p>A dashboard that shows the last reading without its age can look healthy while the system is disconnected. Show when data was measured, when it was received, and whether the source is still communicating.</p><blockquote>The failure path is part of the user experience.</blockquote><p>My preferred starting point is simple: disconnect a device during a prototype, reconnect it, and trace what happens to one reading. That exercise often reveals more than another box on the architecture diagram.</p></template>
+  <template id="note-ai-job"><p class="article-category mono">Emerging tech reality / 2 min read</p><h2 id="article-title">Give AI a job before you give it a model.</h2><p class="lead">“Let us add an AI assistant” is an implementation idea. It still needs a problem worth solving.</p><p>In an IoT setting, there are plenty of things an assistant could say. It could summarize telemetry, explain an anomaly, or suggest an investigation. The useful question is which of those helps someone make a better decision.</p><h3>Name the person and the next action.</h3><p>Consider an energy optimization advisor built around simulated devices. A focused job might be: help a facilities operator identify which unusual consumption pattern deserves investigation first.</p><p>That gives the prototype a practical boundary. It needs evidence about the pattern, enough context to explain why it matters, and a clear way for the operator to check the explanation.</p><h3>Separate evidence from interpretation.</h3><p>Measured consumption, device status, and calculated comparisons should have a traceable source. An AI explanation can help someone understand those facts, but the wording should make assumptions visible.</p><p>I would ask a prototype to distinguish three things:</p><ul><li><strong class="text-emphasis">Observed:</strong> what the available readings show, with the relevant time period.</li><li><strong class="text-emphasis">Inferred:</strong> a possible explanation, with the assumptions behind it.</li><li><strong class="text-emphasis">To verify:</strong> the next check a person could make before acting.</li></ul><h3>Decide how to judge usefulness.</h3><p>Before tuning a prompt, define a few representative situations. Include normal operation, incomplete data, and a case where the evidence does not support a recommendation.</p><p>Then compare the assistant with the existing workflow. Does it help the operator find the issue sooner? Does it point to the right evidence? Does it acknowledge when more information is needed?</p><blockquote>A useful AI prototype has a clear job, a source of evidence, and a way to tell whether it helped.</blockquote><p>The model matters. But those decisions make the model choice a more grounded conversation.</p></template>
+  <template id="note-clarity"><p class="article-category mono">Technical leadership / 2 min read</p><h2 id="article-title">Clarity is part of the architecture.</h2><p class="lead">A diagram can show every component and still leave a team unsure who makes the next decision.</p><p>That uncertainty becomes visible at the boundaries. The platform team assumes the application team owns an alert. The application team assumes the device team validates the data. Each local assumption sounds reasonable. The whole system has a gap.</p><h3>Describe the decision, not just the component.</h3><p>When discussing an interface, I find it useful to ask who owns its meaning. Who decides whether a message is valid? Who changes the schema? Who is responsible when a reading arrives but cannot be used?</p><p>A named service owner helps. A shared understanding of the decisions that owner can make helps more.</p><h3>Leave a short record.</h3><p>An architecture decision does not need a long document. A concise record can capture:</p><ul><li>The problem and the constraints that matter.</li><li>The options considered and why one was chosen.</li><li>The tradeoff being accepted.</li><li>The owner and the condition that would trigger a review.</li></ul><p>This gives the next person a reason they can inspect. It also gives the team permission to revisit a decision when its assumptions change.</p><h3>Make room for others to act.</h3><p>Technical leadership is not limited to a management role. It can mean reducing ambiguity so someone else can move forward with confidence.</p><p>That might be a clear handoff between teams, a smaller proof of concept, or an explicit boundary for a decision. The goal is to help people make progress without waiting for every detail to return to the same person.</p><blockquote>Clarity is something a team can build and maintain.</blockquote><p>For me, that is part of systems thinking. The people who build and operate a system are part of the architecture conversation.</p></template>
+  <script>
+    (() => {
+      'use strict';
+      document.documentElement.classList.add('js');
+      const menuToggle = document.querySelector('.menu-toggle');
+      const siteNav = document.getElementById('site-nav');
+      function closeMenu() {
+        menuToggle.setAttribute('aria-expanded', 'false');
+        siteNav.classList.remove('is-open');
+      }
+      menuToggle.addEventListener('click', () => {
+        const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+        menuToggle.setAttribute('aria-expanded', String(!expanded));
+        siteNav.classList.toggle('is-open', !expanded);
+      });
+      siteNav.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+      document.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && menuToggle.getAttribute('aria-expanded') === 'true') {
+          closeMenu();
+          menuToggle.focus();
+        }
+      });
+      document.addEventListener('click', event => {
+        if (!siteNav.contains(event.target) && !menuToggle.contains(event.target)) closeMenu();
+      });
+      const layerContent = {
+        edge: ['01', 'Start where the data starts.', 'Connections fail. Devices drift. Good architecture starts with the physical world and its constraints.'],
+        cloud: ['02', 'Build a platform people can operate.', 'Make data flow, ownership, and recovery visible. A cloud platform needs a clear operating model as much as a clear diagram.'],
+        ai: ['03', 'Turn context into a useful next step.', 'Give AI a specific job, trace its evidence, and make uncertainty visible before asking someone to act.']
+      };
+      document.querySelectorAll('[data-layer]').forEach(button => {
+        button.addEventListener('click', () => {
+          const key = button.dataset.layer;
+          document.querySelectorAll('[data-layer]').forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+          document.querySelectorAll('[data-art-layer]').forEach(item => item.classList.toggle('is-active', item.dataset.artLayer === key));
+          const [number, title, copy] = layerContent[key];
+          document.querySelector('.insight-index').textContent = number;
+          document.querySelector('.insight-title').textContent = title;
+          document.querySelector('.insight-copy').textContent = copy;
+        });
+      });
+      document.querySelectorAll('[data-filter]').forEach(button => {
+        button.addEventListener('click', () => {
+          const category = button.dataset.filter;
+          let count = 0;
+          document.querySelectorAll('[data-filter]').forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+          document.querySelectorAll('.note-card').forEach(card => {
+            card.hidden = category !== 'all' && card.dataset.category !== category;
+            if (!card.hidden) count++;
+          });
+          document.querySelector('.filter-status').textContent = category === 'all' ? 'Three perspectives. One systems mindset.' : `Showing ${count} fieldnote in ${button.textContent.trim()}.`;
+        });
+      });
+      const dialog = document.getElementById('note-dialog');
+      const article = document.getElementById('article-content');
+      const validNotes = ['connection', 'ai-job', 'clarity'];
+      let lastTrigger = null;
+      let hashOpened = false;
+      let previousHash = '';
+      function openNote(key, updateHash = true, trigger = null) {
+        if (!validNotes.includes(key)) return;
+        lastTrigger = trigger || lastTrigger;
+        const template = document.getElementById('note-' + key);
+        article.replaceChildren(template.content.cloneNode(true));
+        const footer = document.createElement('div');
+        footer.className = 'article-footer';
+        const credit = document.createElement('p');
+        credit.textContent = 'A fieldnote on the questions behind the diagrams.';
+        const share = document.createElement('button');
+        share.className = 'share-note';
+        share.textContent = 'Copy note link ↗';
+        share.addEventListener('click', async () => {
+          const url = new URL('fieldnotes/' + key + '.html', location.href);
+          try {
+            if (location.protocol === 'file:') throw new Error('Local file');
+            await navigator.clipboard.writeText(url.href);
+            share.textContent = 'Link copied';
+          } catch {
+            let fallback = article.querySelector('.share-fallback');
+            if (!fallback) {
+              fallback = document.createElement('input');
+              fallback.type = 'text';
+              fallback.readOnly = true;
+              fallback.className = 'share-fallback';
+              fallback.setAttribute('aria-label', location.protocol === 'file:' ? 'Local note address. Share the HTML file to let others read it.' : 'Note link. Select and copy this address.');
+              article.append(fallback);
+            }
+            fallback.value = url.href;
+            fallback.focus();
+            fallback.select();
+            share.textContent = location.protocol === 'file:' ? 'Local file address' : 'Select link below';
+          }
+        });
+        footer.append(credit, share);
+        article.append(footer);
+        if (!dialog.open) {
+          previousHash = location.hash.startsWith('#note/') ? '#fieldnotes' : location.hash;
+          dialog.showModal();
+          document.body.classList.add('modal-open');
+        }
+        dialog.scrollTop = 0;
+        if (updateHash) {
+          history.pushState({note: key}, '', '#note/' + key);
+          hashOpened = true;
+        }
+      }
+      function closeNote() {
+        if (dialog.open) dialog.close();
+      }
+      dialog.addEventListener('close', () => {
+        document.body.classList.remove('modal-open');
+        if (location.hash.startsWith('#note/')) {
+          if (hashOpened) history.back();
+          else history.replaceState(null, '', previousHash || '#fieldnotes');
+        }
+        hashOpened = false;
+        if (lastTrigger) lastTrigger.focus({preventScroll:true});
+      });
+      dialog.querySelector('.close-button').addEventListener('click', closeNote);
+      dialog.addEventListener('click', event => {
+        if (event.target !== dialog) return;
+        const bounds = dialog.getBoundingClientRect();
+        if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) closeNote();
+      });
+      document.querySelectorAll('[data-note]').forEach(button => button.addEventListener('click', event => {
+        if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+        event.preventDefault();
+        openNote(button.dataset.note, true, button);
+      }));
+      function syncHash() {
+        const key = location.hash.startsWith('#note/') ? location.hash.slice(6) : '';
+        if (validNotes.includes(key)) openNote(key, false);
+        else if (dialog.open) closeNote();
+      }
+      window.addEventListener('hashchange', syncHash);
+      document.getElementById('year').textContent = String(new Date().getFullYear());
+      syncHash();
+    })();
+  </script>
+</body>
+</html>

@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://nagarjunr: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@github.com/nagarjunr/portfolio.git"
+    "url": "git+https://github.com/nagarjunr/portfolio.git"
   },
   "keywords": [],
   "author": "",
@@ -35,3 +35,4 @@
     "vite": "^6.3.5"
   }
 }
+

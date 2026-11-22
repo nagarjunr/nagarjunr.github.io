@@ -1,228 +1,60 @@
-# Portfolio Website - Nagarjun Rajendran
+# Nagarjun Rajendran. Personal website
 
-This repository contains a personal portfolio website for Nagarjun Rajendran, an AIoT Professional, Cloud Architect, and Technology Leader with 15+ years of experience in embedded software, cloud architecture, and digital transformation.
+The revised personal website is in `docs/`. It focuses on IoT Cloud Solutions Architecture, practical GenAI, and technical leadership.
 
-## Project Overview
+## Website
 
-The portfolio website is a modern, responsive Single-Page Application (SPA) featuring sections for:
+- Entry point: `docs/index.html`.
+- No package installation or build step is required for the revised site.
+- The original React/Vite source remains in `src/`.
+- The revised site uses **Teal Cyan Sky Slate** from the personal thematic colour collection.
+- Typography uses **Arbutus Slab**, the default in the personal font collection, at its supported regular weight. The original Google Fonts font is bundled locally, with `font-display: swap` and a serif fallback. Its SIL Open Font License is included in `docs/assets/fonts/OFL.txt`.
+- The original React site uses **Poppins for body text and buttons**, and **Roboto for headings**, as declared in `src/styles/globals.css` and loaded in the root `index.html`.
 
-- Hero introduction
-- About/professional background
-- Experience timeline
-- Services offered
-- Contact information and form
+## Enable GitHub Pages
 
-## Technical Stack
+The workflow in `.github/workflows/pages.yml` publishes only `docs/` when its files change on `main`.
 
-### Frontend Framework
+In Settings, Pages, set the publishing source to **GitHub Actions**. The workflow can also be run manually from the Actions tab. A branch-based source of **main /docs** can serve the same static files.
 
-- **React** (v19.1.0)
-- **React DOM** (v19.1.0)
-- **React Router DOM** (v7.6.1)
+Expected address after GitHub confirms a successful deployment: `https://nagarjunr.github.io/portfolio/`.
 
-### Styling
+The repository is private. GitHub Pages from a private repository requires an eligible GitHub plan. Publishing the website does not require making the source repository public when the account plan supports private-repository Pages.
 
-- **Styled Components** (v6.1.18)
-- Custom CSS variables (in globals.css)
-- Font Awesome icons:
-  - @fortawesome/free-brands-svg-icons (v6.7.2)
-  - @fortawesome/free-solid-svg-icons (v6.7.2)
-  - @fortawesome/react-fontawesome (v0.2.2)
+## Preview locally
 
-### Animation
-
-- **Framer Motion** (v12.15.0) for smooth transitions and animated components
-
-### Form Handling
-
-- **EmailJS** (v4.4.1) for sending emails from the contact form
-
-### Build Tools
-
-- **Vite** for fast development and optimized production builds
-
-## Project Structure
-
-```
-index.html                  # Main HTML file
-package.json                # Dependency management
-vite.config.js              # Vite configuration
-public/
-  └── vite.svg              # Favicon/logo
-src/
-  ├── App.jsx               # Main application component
-  ├── main.jsx              # React entry point
-  ├── assets/               # Static assets
-  │   ├── about-image.jpg   # Image for the About section
-  │   └── profile.jpg       # Profile photo
-  ├── components/           # React components
-  │   ├── Footer.jsx        # Footer component
-  │   ├── Header.jsx        # Navigation header component
-  │   ├── HomePage.jsx      # Main page component
-  │   └── sections/         # Section components
-  │       ├── About.jsx     # About section
-  │       ├── Contact.jsx   # Contact section with form
-  │       ├── Experience.jsx # Work experience section
-  │       ├── Hero.jsx      # Hero banner section
-  │       └── Services.jsx  # Services section
-  └── styles/
-      └── globals.css       # Global CSS variables and styles
+```sh
+python3 -m http.server --directory docs 8080
 ```
 
-## Design System
+Open `http://localhost:8080`. The page also opens directly from disk. The bundled typeface, portrait, and downloadable two-page professional profile are local assets. The website has no runtime API or external asset dependency.
 
-### Color Palette
+## Content and sources
 
-- Primary: LinkedIn blue (#0A66C2)
-- Secondary: Darker blue (#2867B2)
-- Dark: #1E1E1E (for text and dark backgrounds)
-- Light: #F5F5F5 (for light backgrounds)
-- Text: #333333 (main text color)
-- Text Light: #767676 (secondary text color)
-- Background: #FFFFFF (page background)
-- Success: #39B54A (for success states)
+The page draws on the supplied October 2026 full resume, the original `portfolio`, `rna-website`, the personal AI twin repository, and professional context already provided in the conversation. The current formal job title and career dates follow the supplied resume. The portrait comes from the personal AI twin repository. LinkedIn, Medium, newsletter, and email links follow those sources.
 
-### Typography
+The resume repository's `UNVERIFIED_CLAIMS.md` was checked to resolve differences. The older portfolio's unsupported project metrics and the AI twin persona's conflicting job title were not carried over. Historical certifications are not presented as current credentials. Project stages are explicit, including the personal AI twin prototype and the planned energy advisor. The fieldnotes are new drafts for this website.
 
-- **Poppins**: Primary font for body text
-- **Roboto**: Used for headings
-- Font weights range from 300-700
+At the user's request, employer content is limited to roles, broad responsibilities, and personal achievements. Internal platform and programme details, customer identities, proprietary architecture, operating details, security findings, funding, budgets, and non-public strategy are omitted. The personal achievement metrics retained are supported by the supplied resume. The 100,000-device figure is stated as an architectural design capacity, not as the size of a deployed fleet.
 
-### UI Components
+The short downloadable profile is a public summary, not a copy of the full private resume. It omits the phone number and uses the same public-sharing scope as the website.
 
-- Custom button variants (primary and outline)
-- Consistent section layouts with proper padding
-- Responsive containers (max-width: 1200px)
-- Utility classes for layout management (.flex, .grid, etc.)
+## ATS and AI readability
 
-## Component Details
+- The two-page PDF is a single column of selectable text with an embedded font, standard resume headings, explicit skills, and consistent dates. Its reading order and extraction were checked. It does not use a portrait, layout tables, or text embedded in images.
+- `docs/assets/nagarjun-rajendran-profile.txt` provides the same public professional scope in plain text.
+- `docs/profile.json` provides the public career history, education, skills, project stages, and ISO-formatted dates as structured data.
+- The homepage includes Person, ProfilePage, and WebSite structured data. Important career content is present in the initial HTML.
+- The three fieldnotes also have complete static pages under `docs/fieldnotes/`, with canonical URLs and BlogPosting metadata. They are readable without JavaScript and included in the sitemap.
+- `docs/llms.txt` provides a plain-text index to the public profile formats and fieldnotes. It is supplementary guidance, not a guarantee that a crawler will use it.
+- There is no hidden keyword text or unsupported experience added for ranking.
 
-### Header
+## Verification
 
-- Fixed navigation header that changes appearance on scroll
-- Responsive design with hamburger menu for mobile devices
-- Navigation links to page sections using smooth scroll
+Static checks cover JavaScript syntax, HTML structure, navigation targets, menu ARIA references, article templates, external-link protections, exact palette colours, font loading configuration, single-weight typography, and public-file secret patterns. Browser rendering could not be verified under the workspace's browser process restrictions. A successful GitHub Pages deployment must be verified after Pages is enabled.
 
-### Footer
+## Maintenance
 
-- Contains social media links (LinkedIn, GitHub, Twitter)
-- Multiple column layout with responsive design
-- Copyright information
+Edit the static website in `docs/index.html`. Its inline CSS contains the theme and responsive layouts; its templates contain the three fieldnotes. The structured profile and downloadable short profile should be updated when the professional background changes.
 
-### Hero Section
-
-- Gradient background with animation effects
-- Professional introduction with call-to-action buttons
-- Social media links
-
-### About Section
-
-- Professional background information
-- Skills showcase with icons and descriptions
-- Two-column layout with image and text content
-
-### Experience Section
-
-- Work history displayed in a timeline format
-- Interactive elements to showcase different roles
-- Detailed descriptions of professional accomplishments
-
-### Services Section
-
-- Grid layout displaying professional services offered
-- Icons and descriptions for each service
-- Animation effects on scroll/interaction
-
-### Contact Section
-
-- Contact form implemented with EmailJS
-- Form validation for user inputs
-- Additional contact information with icons
-
-## Key Features
-
-1. **Responsive Design**
-
-   - Mobile-first approach
-   - Breakpoints at common device sizes
-   - Flexible layouts that adapt to different screen sizes
-
-2. **Interactive Elements**
-
-   - Framer Motion animations for enhanced user experience
-   - Hover effects for buttons and interactive components
-   - Smooth scrolling navigation
-
-3. **Optimized Performance**
-
-   - Built with Vite for fast loading and rendering
-   - Optimized asset delivery
-   - Component-based architecture for code efficiency
-
-4. **Accessibility**
-   - Semantic HTML structure
-   - Proper ARIA attributes where needed
-   - Keyboard navigable interface
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js (v14.0.0 or higher)
-- npm (v6.0.0 or higher)
-
-### Installation
-
-1. Clone the repository
-
-   ```
-   git clone https://github.com/nagarjunr/portfolio.git
-   ```
-
-2. Install dependencies
-
-   ```
-   cd portfolio
-   npm install
-   ```
-
-3. Start the development server
-
-   ```
-   npm run dev
-   ```
-
-4. Build for production
-
-   ```
-   npm run build
-   ```
-
-5. Preview production build
-   ```
-   npm run preview
-   ```
-
-## Development Notes
-
-- The project uses CSS variables for consistent theming
-- Styled Components are used for component-specific styling
-- React Router is set up for potential multi-page expansion
-- The contact form requires proper EmailJS configuration (SERVICE_ID, TEMPLATE_ID, and USER_ID)
-
-## Future Enhancement Possibilities
-
-- Blog section for professional articles
-- Project showcase with detailed case studies
-- Dark/Light mode toggle
-- Internationalization support
-- Performance monitoring and analytics
-
-## License
-
-ISC License - See LICENSE file for details
-
----
-
-Created: May 30, 2025
-Last Updated: May 30, 2025
+No API keys or contact-form services are required. The `package.json` repository URL is credential-free. Any credential previously committed to the repository should be revoked, because removing it from the current file does not remove it from Git history.

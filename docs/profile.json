@@ -1,0 +1,202 @@
+{
+  "basics": {
+    "name": "Nagarjun Rajendran",
+    "alternateName": "Arjun",
+    "label": "Cloud and Technology Solutions Manager, Expert",
+    "email": "nagarjunrajen@gmail.com",
+    "url": "https://nagarjunr.github.io/portfolio/",
+    "location": {
+      "city": "Chicago area",
+      "region": "Illinois",
+      "countryCode": "US"
+    },
+    "summary": "Cloud and technology solutions professional with 15 years of experience across software applications, embedded systems, IoT, and cloud architecture. Focused on practical GenAI, technical leadership, and clear decisions for delivery teams.",
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "url": "https://www.linkedin.com/in/nagarjunr/"
+      },
+      {
+        "network": "GitHub",
+        "url": "https://github.com/nagarjunr"
+      },
+      {
+        "network": "Medium",
+        "url": "https://medium.com/@nagarjunr"
+      },
+      {
+        "network": "Newsletter",
+        "url": "https://nagarjun.beehiiv.com"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Robert Bosch LLC",
+      "position": "Cloud and Technology Solutions Manager, Expert",
+      "location": "Illinois, United States",
+      "startDate": "2023-01",
+      "summary": "Cloud and IoT solution architecture, emerging technology exploration, customer consultation, and technical product ownership.",
+      "highlights": [
+        "Led a regional five-person solutions team as Technical Product Owner."
+      ]
+    },
+    {
+      "name": "Robert Bosch South East Asia",
+      "position": "Senior IoT Solutions Architect and Technical Lead",
+      "location": "Singapore",
+      "startDate": "2017-08",
+      "endDate": "2022-12",
+      "summary": "End-to-end IoT and cloud solution architecture, technical leadership, and intrapreneurship.",
+      "highlights": [
+        "Guided around 20 engineers on a logistics platform.",
+        "Co-founded AquaEasy within Bosch intrapreneurship."
+      ]
+    },
+    {
+      "name": "Continental Automotive",
+      "position": "Software Engineer",
+      "location": "Singapore",
+      "startDate": "2015-09",
+      "endDate": "2017-08",
+      "summary": "Automotive embedded software, control interfaces, unit testing frameworks, and test automation using C, C++, and Python.",
+      "highlights": [
+        "Automated a test workflow from five hours to 20 minutes."
+      ]
+    },
+    {
+      "name": "Pirate3D",
+      "position": "Embedded Software Architect",
+      "location": "Singapore",
+      "startDate": "2014-05",
+      "endDate": "2015-08",
+      "summary": "3D printer firmware, processor-to-controller communication, motion modelling, and over-the-air firmware updates."
+    },
+    {
+      "name": "Broadcom",
+      "position": "Digital IC Design Intern",
+      "location": "Singapore",
+      "startDate": "2013-07",
+      "endDate": "2013-12",
+      "summary": "Automation for integrated circuit verification workflows, regression tests, and engineering reports."
+    },
+    {
+      "name": "Tata Consultancy Services",
+      "position": "Assistant Systems Engineer, Trainee",
+      "location": "Chennai, India",
+      "startDate": "2011-11",
+      "endDate": "2012-06",
+      "summary": "Banking application development using COBOL, DB2, and SQL, including analysis, development, and documentation."
+    }
+  ],
+  "education": [
+    {
+      "institution": "National University of Singapore",
+      "studyType": "Master of Science",
+      "area": "Electrical and Computer Engineering",
+      "startDate": "2012-07",
+      "endDate": "2013-12"
+    },
+    {
+      "institution": "Anna University, India",
+      "studyType": "Bachelor of Engineering",
+      "area": "Electronics and Communication Engineering",
+      "startDate": "2007-07",
+      "endDate": "2011-05"
+    },
+    {
+      "institution": "University of California, Berkeley, Haas School of Business",
+      "studyType": "Executive education, distance learning",
+      "area": "Startup Acceleration Group",
+      "startDate": "2017-08",
+      "endDate": "2018-07"
+    }
+  ],
+  "skills": [
+    "IoT solution architecture",
+    "Cloud solution architecture",
+    "Amazon Web Services (AWS)",
+    "Microsoft Azure",
+    "Generative AI (GenAI)",
+    "System design",
+    "Integration architecture",
+    "Technical product ownership",
+    "Technical leadership",
+    "Embedded systems",
+    "Python",
+    "C and C++",
+    "Infrastructure as code",
+    "Customer discovery"
+  ],
+  "projects": [
+    {
+      "name": "Cloud platforms. Connected mobility.",
+      "description": "Cloud solution architecture, partner integrations, and technical product ownership in mobility and logistics. My work connects solution design with delivery teams and business needs, including leading a regional five-person solutions team as Technical Product Owner.",
+      "status": "Architecture & technical product ownership",
+      "keywords": [
+        "AWS",
+        "Azure",
+        "Integration architecture",
+        "Technical product ownership"
+      ]
+    },
+    {
+      "name": "Connected e-scooters. Architecture beyond the device.",
+      "description": "Architected an Azure-based connected e-scooter solution designed to support up to 100,000 devices. My role brought together IoT and cloud design, reliability, security considerations, and support for the delivery team.",
+      "status": "Azure IoT solution architecture",
+      "keywords": [
+        "Azure IoT",
+        "Device connectivity",
+        "Security architecture",
+        "Performance testing"
+      ]
+    },
+    {
+      "name": "AquaEasy. From a hypothesis to an IoT product.",
+      "description": "Co-founded AquaEasy within Bosch’s intrapreneurship programme as part of a three-person founding team. I worked on customer discovery and product validation, led IoT gateway firmware architecture and development, and helped demonstrate the working product.",
+      "status": "Co-founder / Bosch intrapreneurship",
+      "keywords": [
+        "IoT gateway design",
+        "Product validation",
+        "Customer discovery",
+        "Intrapreneurship"
+      ]
+    },
+    {
+      "name": "A personal AI twin. A conversation as an interface.",
+      "description": "A personal prototype pairing a Next.js chat interface with a Python backend and infrastructure-as-code deployment configuration. It explores how a conversational interface can present professional context while keeping the interface, API, and deployment concerns separate.",
+      "status": "Personal prototype",
+      "keywords": [
+        "Next.js",
+        "Python",
+        "Generative AI",
+        "Infrastructure as code"
+      ]
+    },
+    {
+      "name": "A Raspberry Pi. An end-to-end IoT journey.",
+      "description": "A hands-on learning project connecting a Raspberry Pi and GrovePi with Django, MongoDB, and Azure. I used it to explain the IoT journey in a beginner-friendly Medium article, from collecting data to making it useful in a web application.",
+      "status": "Personal project & article / 2020",
+      "keywords": [
+        "Raspberry Pi",
+        "GrovePi",
+        "Django",
+        "MongoDB",
+        "Azure"
+      ]
+    }
+  ],
+  "community": [
+    "IEEE Senior Member"
+  ],
+  "interests": [
+    "Quantum technologies",
+    "Practical GenAI",
+    "Cloud governance",
+    "Technical leadership"
+  ],
+  "meta": {
+    "lastModified": "2026-11-22",
+    "profileType": "Public professional profile"
+  }
+}
