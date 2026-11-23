@@ -123,8 +123,10 @@
     .system-art .route-active { fill: none; stroke: var(--teal-400); stroke-width: 1.7; stroke-dasharray: 5 9; animation: signal 8s linear infinite; }
     .system-art .layer { transition: opacity .3s, transform .25s cubic-bezier(.2,0,0,1); }
     .system-art .layer.is-active { transform: translateY(-7px); }
-    .system-art .flow { fill: none; stroke: var(--teal-400); stroke-width: 1.6; stroke-linecap: round; stroke-dasharray: 4 8; opacity: .2; transition: opacity .3s; animation: flow-up 1.2s linear infinite; pointer-events: none; }
-    .system-art .flow.is-lit { opacity: 1; }
+    .system-art .rail { fill: none; stroke: var(--teal-400); stroke-width: 1; stroke-linecap: round; opacity: .22; transition: opacity .3s; pointer-events: none; }
+    .system-art .rail.is-lit { opacity: .7; }
+    .system-art .packet { fill: var(--teal-400); opacity: 0; transition: opacity .3s; pointer-events: none; filter: drop-shadow(0 0 3px var(--teal-400)); }
+    .system-art .packet.is-lit { opacity: 1; }
     .insight-swap { animation: caption-in .22s cubic-bezier(.2,0,0,1) both; }
     .system-art text { font-family: var(--mono); letter-spacing: 2px; font-size: 10px; }
     .system-art .fine { font-size: 8px; letter-spacing: 1.2px; fill: var(--slate-50); }
@@ -267,7 +269,6 @@
     .hero-animate { animation: arrive .7s ease-out both; }
     .system { animation: arrive .85s ease-out .1s both; }
     @keyframes signal { to { stroke-dashoffset: -112; } }
-    @keyframes flow-up { to { stroke-dashoffset: -12; } }
     @keyframes caption-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
     @keyframes arrive { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
     @media (min-width: 1500px) {
@@ -400,6 +401,7 @@
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       *, *::before, *::after { animation: none !important; transition: none !important; }
+      .system-art .packet { display: none; }
     }
     @media print {
       header, .actions, .hero-caption, .hero-bottom, .note-filters, .filter-status, .note-read, .profile-download, .back-top, dialog { display: none !important; }
@@ -741,6 +743,15 @@
     .chat .ask-form { margin: 4px 20px 20px; }
     .chat .ask-form input { background: var(--sc-highest); }
     @media (max-width: 600px) { .chat { right: 16px; bottom: 16px; } .chat-panel { height: min(560px, calc(100dvh - 104px)); } }
+    @media (max-width: 600px) {
+      .chat.is-open .chat-fab { display: none; }
+      .chat.is-open .chat-panel { position: fixed; left: 0; right: 0; top: var(--vvt, 0px); width: 100%; height: var(--vvh, 100dvh); border-radius: 0; box-shadow: none; transform-origin: bottom center; }
+      .chat.is-open .chat-head { padding-top: calc(12px + env(safe-area-inset-top)); }
+      .chat.is-open .ask-form { margin-bottom: calc(12px + env(safe-area-inset-bottom)); }
+      .chat.is-open.kb .chat-head p, .chat.is-open.kb .ask-suggest { display: none; }
+      .chat.is-open.kb .ask-form { margin-bottom: 12px; }
+      html.chat-lock, html.chat-lock body { overflow: hidden; overscroll-behavior: none; }
+    }
     @media print { .chat { display: none; } }
     .newsletter-topics > .mono:not(:first-child) { margin-top: 36px; }
     .newsletter-topics .topics-note { font-size: 13px; line-height: 1.8; color: var(--muted); margin: 0 0 16px; max-width: 460px; }
@@ -817,8 +828,14 @@
               <path d="M88 233H62l-12-11" fill="none" stroke="#F8FAFC80" stroke-width=".7"/><text class="fine" x="28" y="221">01</text>
             </g>
             <g aria-hidden="true">
-              <path class="flow" data-flow="1" d="M175 238V204M305 238V204"/>
-              <path class="flow" data-flow="2" d="M185 168V128M295 168V128"/>
+              <path class="rail" data-flow="1" d="M96 231 116 160"/>
+              <path class="rail" data-flow="1" d="M384 231 364 160"/>
+              <path class="rail" data-flow="2" d="M116 160 138 92"/>
+              <path class="rail" data-flow="2" d="M364 160 342 92"/>
+              <circle class="packet" data-flow="1" r="2.6"><animateMotion dur="1.8s" begin="0s" repeatCount="indefinite" path="M96 231 116 160" keyPoints="0;1" keyTimes="0;1" calcMode="linear"/></circle>
+              <circle class="packet" data-flow="1" r="2.6"><animateMotion dur="1.8s" begin="0.9s" repeatCount="indefinite" path="M384 231 364 160" keyPoints="0;1" keyTimes="0;1" calcMode="linear"/></circle>
+              <circle class="packet" data-flow="2" r="2.6"><animateMotion dur="1.8s" begin="0s" repeatCount="indefinite" path="M116 160 138 92" keyPoints="0;1" keyTimes="0;1" calcMode="linear"/></circle>
+              <circle class="packet" data-flow="2" r="2.6"><animateMotion dur="1.8s" begin="0.9s" repeatCount="indefinite" path="M364 160 342 92" keyPoints="0;1" keyTimes="0;1" calcMode="linear"/></circle>
             </g>
             <g class="device-icon"><path d="m59 147 13-5 13 5v21l-13 5-13-5zm0 0 13 5 13-5m-13 5v21M393 209l11-4 11 4v18l-11 4-11-4zm0 0 11 4 11-4m-11 4v18"/><path d="M65 134q7-8 14 0m-18-5q11-12 22 0M397 197q7-8 14 0" opacity=".65"/></g>
             <text class="fine" x="20" y="305">PHYSICAL WORLD → USEFUL DECISIONS</text>
@@ -1139,10 +1156,31 @@
       const button = form.querySelector('button');
       const history = [];
       root.hidden = false;
+      const mobileQuery = window.matchMedia('(max-width: 600px)');
+      const vv = window.visualViewport;
+      // On phones the panel is a full-height sheet sized to the visible area, so the keyboard never covers the input.
+      const syncViewport = () => {
+        const mobileOpen = mobileQuery.matches && !panel.hidden;
+        document.documentElement.classList.toggle('chat-lock', mobileOpen);
+        if (!mobileOpen || !vv) {
+          root.classList.remove('kb');
+          root.style.removeProperty('--vvh'); root.style.removeProperty('--vvt');
+          return;
+        }
+        root.style.setProperty('--vvh', vv.height + 'px');
+        root.style.setProperty('--vvt', vv.offsetTop + 'px');
+        root.classList.toggle('kb', window.innerHeight - vv.height > 120);
+        log.scrollTop = log.scrollHeight;
+      };
+      if (vv) { vv.addEventListener('resize', syncViewport); vv.addEventListener('scroll', syncViewport); }
+      mobileQuery.addEventListener('change', syncViewport);
       const setOpen = (open, restoreFocus) => {
         panel.hidden = !open;
         fab.setAttribute('aria-expanded', String(open));
         fab.querySelector('.fab-label').textContent = open ? 'Close' : 'Ask';
+        root.classList.toggle('is-open', open);
+        document.documentElement.classList.toggle('chat-lock', open && mobileQuery.matches);
+        syncViewport();
         if (open) input.focus(); else if (restoreFocus) fab.focus();
       };
       fab.addEventListener('click', () => setOpen(panel.hidden, true));
