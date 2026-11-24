@@ -103,7 +103,7 @@ Held system-level responsibility for the printer microcontroller firmware. I doc
 
 WRITING
 Silicon to Systems, a blog on edge AI, cloud architecture, and the engineering behind systems that scale: https://nagarjun.beehiiv.com/
-The Agentic Architecture Arc, a seven-part series on production agent systems (parts 1 to 3 published).
+The Agentic Architecture Arc, a seven-part series on production agent systems (parts 1 to 4 published).
 Internet of Things 101: An end-to-end IoT journey (Medium, 2020): https://medium.com/@nagarjunr/internet-of-things-101-an-end-to-end-iot-journey-6d8ea5cfe13c
 
 COMMUNITY
