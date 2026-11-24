@@ -22,6 +22,16 @@ In repository Settings, Pages, choose **GitHub Actions** as the source. Each pus
 
 The `.nojekyll` file also supports branch publishing from **main / (root)** if needed. Use one publishing method at a time.
 
+## Blog posts
+
+The blog lists (the Agentic Architecture Arc series and "More writing") are generated from `data/blog.json`. To add a post, add one entry to that file (a new series part goes at the end of `series.parts`), then run:
+
+```
+python3 -I scripts/sync_blog.py
+```
+
+This rewrites the blog sections of `index.html` (between the `blog:` markers), `llms.txt`, the text profile, and the private twin knowledge file when the twin repo is checked out next to it. `python3 -I scripts/sync_blog.py --check` exits 1 if any file is out of date, and `scripts/prepare_pages.py` runs it so a stale page cannot be published. The twin repo is committed and released separately (`main` to `vercel`).
+
 ## Local preview
 
 ```sh

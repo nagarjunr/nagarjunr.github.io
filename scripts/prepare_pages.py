@@ -7,6 +7,8 @@ from html.parser import HTMLParser
 from pathlib import Path
 import re
 import shutil
+import subprocess
+import sys
 from urllib.parse import unquote, urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -33,6 +35,7 @@ class Links(HTMLParser):
 
 
 def main() -> None:
+    subprocess.run([sys.executable, '-I', str(ROOT / 'scripts' / 'sync_blog.py'), '--check'], check=True)
     if OUTPUT.exists():
         shutil.rmtree(OUTPUT)
     OUTPUT.mkdir()
