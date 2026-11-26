@@ -71,7 +71,15 @@ SELECTED PROJECTS
 
 GenAI for manufacturing launches. From prototype to evidence.
 Technical lead & cloud solutions architect
-Technical lead and cloud solutions architect for a GenAI solution that helps manufacturing plants track the readiness quality of their production lines. I shaped the architecture, grounded the assistant in structured plant data with a focus on accuracy and governance, and delivered a working prototype.
+I led the architecture of a working GenAI prototype to help manufacturing teams assess production-line readiness, grounding the assistant in structured plant data.
+
+Connected e-scooters. Architecture beyond the device.
+Azure IoT solution architecture
+I designed an Azure IoT platform for connected e-scooters with capacity for 100K+ devices, defining device-to-cloud communication and security and guiding performance testing.
+
+AquaEasy. From a hypothesis to an IoT product.
+Co-founder / Bosch intrapreneurship
+I co-founded AquaEasy through Bosch’s intrapreneurship programme, led IoT gateway firmware development, and helped take the product from customer discovery to a paying customer.
 
 Azure platform. Governance by design.
 Lead architect / Azure cloud platform
@@ -84,14 +92,6 @@ Contributed to the company cloud strategy, helping shape the direction of future
 Cloud platforms. Connected mobility.
 Architecture & technical product ownership
 Cloud solution architecture, partner integrations, and technical product ownership in mobility and logistics. My work connects solution design with delivery teams and business needs, including leading a regional five-person solutions team as Technical Product Owner.
-
-Connected e-scooters. Architecture beyond the device.
-Azure IoT solution architecture
-Architected an Azure-based connected e-scooter solution designed to support up to 100,000 devices. My role brought together IoT and cloud design, reliability, security considerations, and support for the delivery team.
-
-AquaEasy. From a hypothesis to an IoT product.
-Co-founder / Bosch intrapreneurship
-Co-founded AquaEasy within Bosch’s intrapreneurship programme as part of a three-person founding team. I worked on customer discovery and product validation, led IoT gateway firmware architecture and development, and helped demonstrate the working product.
 
 Automotive software. Embedded, tested, automated.
 Embedded software engineer / Continental Automotive, 2015 to 2017
@@ -108,7 +108,3 @@ Internet of Things 101: An end-to-end IoT journey (Medium, 2020): https://medium
 
 COMMUNITY
 IEEE Senior Member
-
-WRITING
-https://medium.com/@nagarjunr
-Silicon to Systems: https://nagarjun.beehiiv.com/

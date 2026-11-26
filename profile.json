@@ -139,13 +139,35 @@
   "projects": [
     {
       "name": "GenAI for manufacturing launches. From prototype to evidence.",
-      "description": "Technical lead and cloud solutions architect for a GenAI solution that helps manufacturing plants track the readiness quality of their production lines. I shaped the architecture, grounded the assistant in structured plant data with a focus on accuracy and governance, and delivered a working prototype.",
+      "description": "I led the architecture of a working GenAI prototype to help manufacturing teams assess production-line readiness, grounding the assistant in structured plant data.",
       "status": "Technical lead & cloud solutions architect",
       "keywords": [
         "GenAI",
         "Cloud architecture",
         "Data grounding",
         "Technical leadership"
+      ]
+    },
+    {
+      "name": "Connected e-scooters. Architecture beyond the device.",
+      "description": "I designed an Azure IoT platform for connected e-scooters with capacity for 100K+ devices, defining device-to-cloud communication and security and guiding performance testing.",
+      "status": "Azure IoT solution architecture",
+      "keywords": [
+        "Azure IoT",
+        "Device connectivity",
+        "Security architecture",
+        "Performance testing"
+      ]
+    },
+    {
+      "name": "AquaEasy. From a hypothesis to an IoT product.",
+      "description": "I co-founded AquaEasy through Bosch’s intrapreneurship programme, led IoT gateway firmware development, and helped take the product from customer discovery to a paying customer.",
+      "status": "Co-founder / Bosch intrapreneurship",
+      "keywords": [
+        "IoT gateway design",
+        "Product validation",
+        "Customer discovery",
+        "Intrapreneurship"
       ]
     },
     {
@@ -178,28 +200,6 @@
         "Azure",
         "Integration architecture",
         "Technical product ownership"
-      ]
-    },
-    {
-      "name": "Connected e-scooters. Architecture beyond the device.",
-      "description": "Architected an Azure-based connected e-scooter solution designed to support up to 100,000 devices. My role brought together IoT and cloud design, reliability, security considerations, and support for the delivery team.",
-      "status": "Azure IoT solution architecture",
-      "keywords": [
-        "Azure IoT",
-        "Device connectivity",
-        "Security architecture",
-        "Performance testing"
-      ]
-    },
-    {
-      "name": "AquaEasy. From a hypothesis to an IoT product.",
-      "description": "Co-founded AquaEasy within Bosch’s intrapreneurship programme as part of a three-person founding team. I worked on customer discovery and product validation, led IoT gateway firmware architecture and development, and helped demonstrate the working product.",
-      "status": "Co-founder / Bosch intrapreneurship",
-      "keywords": [
-        "IoT gateway design",
-        "Product validation",
-        "Customer discovery",
-        "Intrapreneurship"
       ]
     },
     {
