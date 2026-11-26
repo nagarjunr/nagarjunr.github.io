@@ -79,7 +79,7 @@ Lead architect for an enterprise Azure cloud platform. I define the governance m
 
 Cloud strategy. Shaping what comes next.
 Contribution / cloud strategy
-Contributed to the company cloud strategy, helping shape the direction of future digital business initiatives. Alongside it, I assess how emerging technologies such as GenAI, Zero Trust, and ambient intelligence could matter for future business lines.
+Contributed to the company cloud strategy, helping shape the direction of future digital business initiatives.
 
 Cloud platforms. Connected mobility.
 Architecture & technical product ownership
