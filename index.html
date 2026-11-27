@@ -736,7 +736,7 @@
     @keyframes chat-in { from { opacity: 0; transform: scale(.94) translateY(8px); } to { opacity: 1; transform: none; } }
     .chat-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; padding: 16px 8px 12px 20px; }
     .chat-head h2 { font-size: 20px; line-height: 1.3; font-weight: 400; letter-spacing: -.3px; margin: 0; }
-    .chat-head p { font-size: 12px; line-height: 1.6; color: var(--muted); margin: 4px 0 0; max-width: 290px; }
+
     .chat-close { position: relative; isolation: isolate; width: 48px; height: 48px; flex-shrink: 0; border: 0; border-radius: var(--r-sm); background: transparent; color: var(--muted); display: grid; place-items: center; padding: 0; cursor: pointer; }
     .chat-close .icon { width: 24px; height: 24px; }
     .chat .ask-log { padding: 8px 20px 12px; }
@@ -749,7 +749,7 @@
       .chat.is-open .chat-panel { position: fixed; left: 0; right: 0; top: var(--vvt, 0px); width: 100%; height: var(--vvh, 100dvh); border-radius: 0; box-shadow: none; transform-origin: bottom center; }
       .chat.is-open .chat-head { padding-top: calc(12px + env(safe-area-inset-top)); }
       .chat.is-open .ask-form { margin-bottom: calc(12px + env(safe-area-inset-bottom)); }
-      .chat.is-open.kb .chat-head p, .chat.is-open.kb .ask-suggest { display: none; }
+      .chat.is-open.kb .ask-suggest { display: none; }
       .chat.is-open.kb .ask-form { margin-bottom: 12px; }
       html.chat-lock, html.chat-lock body { overflow: hidden; overscroll-behavior: none; }
     }
@@ -975,7 +975,7 @@
   <footer class="wrap"><div class="connect-strip"><div><h2>Good conversations build better systems.</h2><p>I’m open to technical interviews, podcast conversations, architecture consulting, mentoring, and study and career guidance. You can also <a href="mailto:nagarjunrajen@gmail.com">email me</a>.</p></div><a class="button" href="https://www.linkedin.com/in/nagarjunr/" target="_blank" rel="noopener noreferrer">Connect on LinkedIn <svg class="icon arrow" aria-hidden="true" focusable="false"><use href="#i-arrow-outward"/></svg><span class="sr-only">, opens in a new tab</span></a></div><div class="footer-main"><span class="footer-brand">Nagarjun<span class="brand-dot">.</span></span><span class="footer-thought">Good systems start with better questions.</span><a class="back-top" href="#top">Back to top <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-up"/></svg></a></div><div class="footer-fine"><span>© <span id="year">2026</span> Nagarjun Rajendran</span><span>Personal perspectives. No employer endorsement.</span></div><div class="palette-mark" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div></footer>
   <div class="chat" id="chat" hidden>
     <div class="chat-panel" id="chat-panel" role="dialog" aria-labelledby="chat-title" hidden>
-      <div class="chat-head"><div><h2 id="chat-title">Ask Nagarjun</h2><p>Nagarjun’s digital twin: an AI, not a person. It answers from the public profile on this website and can make mistakes.</p></div><button class="chat-close" id="chat-close" type="button" aria-label="Close chat"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-close"/></svg></button></div>
+      <div class="chat-head"><div><h2 id="chat-title">Ask Nagarjun</h2></div><button class="chat-close" id="chat-close" type="button" aria-label="Close chat"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-close"/></svg></button></div>
       <div class="ask-log" id="ask-log" role="log" aria-live="polite" aria-label="Conversation with the digital twin"><div class="ask-msg bot">Hello. I am Nagarjun's digital twin, an AI built from his public profile. Ask me about his background, projects, skills, or writing.</div></div>
       <div class="ask-suggest" id="ask-suggest"><button type="button">What is your architecture background?</button><button type="button">Tell me about the e-scooter project.</button><button type="button">What does the blog cover?</button></div>
       <form class="ask-form" id="ask-form" autocomplete="off"><label class="sr-only" for="ask-input">Your question</label><input id="ask-input" type="text" maxlength="600" placeholder="Ask a question" required><button type="submit"><span class="sr-only">Send</span><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-send"/></svg></button></form>
